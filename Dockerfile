@@ -22,5 +22,5 @@ RUN php artisan key:generate --ansi || true
 # permissions
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html/storage || true
 
-EXPOSE 9000
-CMD ["php-fpm"]
+EXPOSE 10000
+CMD ["sh", "-lc", "php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
