@@ -2,7 +2,7 @@ FROM php:8.1-fpm
 
 # system deps
 RUN apt-get update && apt-get install -y \
-    git unzip libzip-dev zip libpng-dev libonig-dev libxml2-dev \
+    git unzip libzip-dev zlib1g-dev libpng-dev libonig-dev libxml2-dev libsqlite3-dev pkg-config \
     && docker-php-ext-install pdo pdo_sqlite mbstring zip exif pcntl bcmath
 
 # Composer
