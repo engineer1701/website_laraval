@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: consultancy-website
+    env: docker
+    plan: free
+    branch: main
+    dockerfilePath: Dockerfile
+    startCommand: php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder && php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        value: "${APP_KEY}"
+      - key: DB_CONNECTION
+        value: sqlite
