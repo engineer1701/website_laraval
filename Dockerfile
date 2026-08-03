@@ -17,9 +17,9 @@ COPY . /var/www/html
 # install PHP dependencies, create .env, generate app key, and create sqlite database file
 RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist \
     && if [ ! -f .env ]; then cp .env.example .env; fi \
-    && php artisan key:generate --ansi \
     && mkdir -p database && touch database/database.sqlite \
+    && php artisan key:generate --ansi \
     && chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html/storage
 
 EXPOSE 10000
-CMD ["sh", "-lc", "php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
+CMD ["sh", "-lc", "if [ ! -f .env ]; then cp .env.example .env; fi && mkdir -p database && touch database/database.sqlite && php artisan key:generate --ansi --force || true && php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
