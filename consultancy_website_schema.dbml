@@ -1,0 +1,88 @@
+// Consultancy Website Database Design
+// Generated from the current Laravel project structure and migrations
+
+Table users {
+  id bigint [pk, increment]
+  name varchar(255) [not null]
+  email varchar(255) [unique, not null]
+  email_verified_at timestamp [null]
+  password varchar(255) [not null]
+  remember_token varchar(100) [null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table admin_users {
+  id bigint [pk, increment]
+  name varchar(255) [not null]
+  email varchar(255) [unique, not null]
+  password varchar(255) [not null]
+  remember_token varchar(100) [null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table articles {
+  id bigint [pk, increment]
+  title varchar(255) [not null]
+  slug varchar(255) [unique, not null]
+  category varchar(255) [not null]
+  image varchar(255) [null]
+  excerpt text [null]
+  body longtext [not null]
+  published_at timestamp [null]
+  is_featured boolean [not null, default: false]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table case_studies {
+  id bigint [pk, increment]
+  title varchar(255) [not null]
+  slug varchar(255) [unique, not null]
+  client varchar(255) [not null]
+  industry varchar(255) [not null]
+  result varchar(255) [null]
+  summary text [not null]
+  body longtext [not null]
+  image varchar(255) [null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table team_members {
+  id bigint [pk, increment]
+  name varchar(255) [not null]
+  title varchar(255) [not null]
+  photo varchar(255) [null]
+  bio text [not null]
+  email varchar(255) [null]
+  linkedin varchar(255) [null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table contacts {
+  id bigint [pk, increment]
+  first_name varchar(255) [not null]
+  last_name varchar(255) [not null]
+  company varchar(255) [not null]
+  country varchar(255) [not null]
+  email varchar(255) [not null]
+  phone varchar(255) [not null]
+  message text [not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table testimonials {
+  id bigint [pk, increment]
+  name varchar(255) [not null]
+  company varchar(255) [not null]
+  quote text [not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+// Note: The current implementation does not define foreign-key relationships between these tables.
+// Each table is independently managed as content or authentication data.
