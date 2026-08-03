@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -23,7 +24,14 @@ class ContactController extends Controller
 
         $contact = Contact::create($validated);
 
-        Mail::to(config('mail.from.address'))->send(new ContactMail($contact));
+        try {
+            Mail::to(config('mail.from.address'))->send(new ContactMail($contact));
+        } catch (\Throwable $e) {
+            Log::warning('Contact enquiry stored but email notification failed.', [
+                'contact_id' => $contact->id,
+                'error' => $e->getMessage(),
+            ]);
+        }
 
         return redirect()->route('contact')->with('success', 'Your enquiry has been received. We will be in touch shortly.');
     }

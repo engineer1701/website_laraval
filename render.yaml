@@ -5,11 +5,19 @@ services:
     plan: free
     branch: main
     dockerfilePath: Dockerfile
-    startCommand: php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder && php artisan serve --host=0.0.0.0 --port=$PORT
+    startCommand: >-
+      php artisan key:generate --force --no-interaction || true &&
+      php artisan migrate --force &&
+      php artisan db:seed --class=DatabaseSeeder --force || true &&
+      php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_KEY
         value: "${APP_KEY}"
+      - key: APP_DEBUG
+        value: false
       - key: DB_CONNECTION
         value: sqlite
+      - key: DB_DATABASE
+        value: /var/www/html/database/database.sqlite
