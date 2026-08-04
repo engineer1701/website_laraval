@@ -7,8 +7,10 @@ services:
     dockerfilePath: Dockerfile
     startCommand: >-
       php artisan key:generate --force --no-interaction || true &&
+      mkdir -p database && touch database/database.sqlite && rm -f bootstrap/cache/config.php &&
+      php artisan config:clear --no-interaction || true &&
       php artisan migrate --force &&
-      php artisan db:seed --class=DatabaseSeeder --force || true &&
+      php artisan db:seed --class=DatabaseSeeder --force &&
       php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
     envVars:
       - key: APP_ENV
