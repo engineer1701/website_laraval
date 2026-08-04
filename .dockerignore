@@ -5,3 +5,4 @@ database/database.sqlite
 storage/*.key
 *.log
 .DS_Store
+bootstrap/cache/config.php
