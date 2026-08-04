@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Str;
 
+$database = env('DB_DATABASE', database_path('database.sqlite'));
+if (!Str::startsWith($database, ['/', '\\']) && !preg_match('/^[A-Za-z]:\\\\/', $database)) {
+    $database = base_path($database);
+}
+
 return [
 
     /*
