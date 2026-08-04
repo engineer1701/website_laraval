@@ -23,4 +23,4 @@ RUN rm -f bootstrap/cache/config.php \
     && chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html/storage
 
 EXPOSE 10000
-CMD ["sh", "-lc", "if [ ! -f .env ]; then cp .env.example .env; fi && mkdir -p database && touch database/database.sqlite && php artisan key:generate --ansi --force || true && php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
+CMD ["sh", "-lc", "rm -f bootstrap/cache/config.php && if [ ! -f .env ]; then cp .env.example .env; fi && mkdir -p database && touch database/database.sqlite && php artisan key:generate --ansi --force || true && php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
