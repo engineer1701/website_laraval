@@ -53,3 +53,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/contacts', [AdminContactController::class, 'index'])->name('contacts.index');
     });
 });
+
+// Temporary debug route to inspect database record counts in production
+Route::get('/debug-db', function () {
+    return response()->json([
+        'team_members' => \App\Models\TeamMember::count(),
+        'testimonials' => \App\Models\Testimonial::count(),
+        'articles' => \App\Models\Article::count(),
+        'services' => \App\Models\Service::count(),
+        'industries' => \App\Models\Industry::count(),
+        'case_studies' => \App\Models\CaseStudy::count(),
+    ]);
+});
