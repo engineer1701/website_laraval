@@ -4,21 +4,15 @@ services:
     env: docker
     plan: free
     branch: main
-    dockerfilePath: Dockerfile
-    startCommand: >-
-      php artisan key:generate --force --no-interaction || true &&
-      mkdir -p database && touch database/database.sqlite && rm -f bootstrap/cache/config.php &&
-      php artisan config:clear --no-interaction || true &&
-      php artisan migrate --force &&
-      php artisan db:seed --class=DatabaseSeeder --force &&
-      php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
     envVars:
       - key: APP_ENV
         value: production
-      - key: APP_KEY
-        value: "${APP_KEY}"
       - key: APP_DEBUG
         value: false
+      - key: APP_KEY
+        generateValue: true
       - key: DB_CONNECTION
         value: sqlite
       - key: DB_DATABASE
