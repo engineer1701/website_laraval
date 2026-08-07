@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $appUrl = env('APP_URL');
+        if (!empty($appUrl)) {
+            config(['app.url' => rtrim($appUrl, '/')]);
+        }
+
+        $forwardedProto = request()->header('X-Forwarded-Proto');
+        if (request()->isSecure() || (!empty($forwardedProto) && Str::contains($forwardedProto, 'https'))) {
+            URL::forceScheme('https');
+            if (!empty($appUrl)) {
+                config(['app.url' => rtrim($appUrl, '/')]);
+            }
+        }
+
         $appKey = env('APP_KEY');
         if (empty($appKey)) {
             $appKey = 'base64:' . base64_encode(random_bytes(32));
