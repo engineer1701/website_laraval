@@ -51,20 +51,20 @@
     <main>
         @yield('content')
     </main>
-    <footer>
+    <footer class="py-5 mt-5 border-top">
         <div class="container-lg">
-            <div class="row justify-content-between g-3 mb-xl-5 mb-4">
+            <div class="row justify-content-between g-4 mb-xl-5 mb-4">
                 <div class="col-xl-4 col-lg-5">
                     <div class="d-flex flex-column align-items-lg-start align-items-center h-100">
-                        <div class="mb-5">
+                        <div class="mb-4">
                             <img src="{{ asset('images/logo.svg') }}" alt="" class="footer-logo img-fluid">
                         </div>
-                        <form action="">
-                            <h5>Subscribe</h5>
-                            <label for="" class="small form-label">Receive quarterly insights on strategy, leadership, and innovation delivered directly to your inbox.</label>
-                            <div class="d-flex gap-2 align-items-center">
-                                <input type="email" placeholder="Email" class="form-control rounded-0 shadow-none grey-bg">
-                                <button type="submit" class="btn btn-type1 rounded-0 px-3">Submit</button>
+                        <form action="" class="w-100">
+                            <h5 class="fw-bold">Subscribe</h5>
+                            <label class="small form-label">Receive quarterly insights on strategy, leadership, and innovation delivered directly to your inbox.</label>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <input type="email" placeholder="Email" class="form-control rounded-pill shadow-none grey-bg">
+                                <button type="submit" class="btn btn-type1 rounded-pill px-3">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -81,13 +81,13 @@
                                 <a href="{{ route('team') }}" class="nav-link">Our Team</a>
                             </div>
                             <div class="d-flex justify-content-lg-end justify-content-center flex-wrap gap-3 fs-5">
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href="" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
                             </div>
                         </div>
-                        <div class="copyright-text">&copy; 2025 Consultancy Company</div>
+                        <div class="copyright-text text-muted mt-3">&copy; 2025 Consultancy Company</div>
                     </div>
                 </div>
             </div>

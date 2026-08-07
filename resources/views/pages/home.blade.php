@@ -6,17 +6,17 @@
 @section('content')
 <section>
     <div class="px-xl-5 px-3">
-        <div class="primary-bg rounded-top-5 py-4">
+        <div class="primary-bg rounded-top-5 py-5 py-lg-6">
             <div class="container-lg">
-                <div class="row gx-xl-5 gx-lg-4 gx-3 align-items-lg-center align-items-end justify-content-between">
+                <div class="row gx-xl-5 gx-lg-4 gx-3 align-items-lg-center justify-content-between">
                     <div class="col-lg-5 col-md-6">
-                        <h1 class="display-5 fw-bold lh-1 mb-4 text-white">Transform Strategy Into Sustainable Growth</h1>
-                        <p class="mb-4 text-white">Partner with industry-leading consultants who combine deep sector expertise with innovative methodologies to solve your most complex business challenges.</p>
-                        <a href="{{ route('contact') }}" class="btn btn-type1 px-4 border rounded-0 text-white">Get Started</a>
+                        <h1 class="display-4 fw-bold lh-1 mb-4 text-white">Transform Strategy Into Sustainable Growth</h1>
+                        <p class="mb-4 text-white fs-5">Partner with industry-leading consultants who combine deep sector expertise with innovative methodologies to solve your most complex business challenges.</p>
+                        <a href="{{ route('contact') }}" class="btn btn-type2 px-4 py-2 rounded-pill">Get Started</a>
                     </div>
                     <div class="col-lg-6 col-md-5 d-md-block d-none">
-                        <div class="text-center">
-                            <video width="100%" height="auto" autoplay loop muted>
+                        <div class="text-center rounded-4 overflow-hidden border border-white border-opacity-25">
+                            <video width="100%" height="auto" autoplay loop muted playsinline>
                                 <source src="{{ asset('images/home-banner-video.mp4') }}" type="video/mp4">
                             </video>
                         </div>

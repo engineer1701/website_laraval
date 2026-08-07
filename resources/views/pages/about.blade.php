@@ -20,8 +20,8 @@
 </section>
 <section class="py-5">
     <div class="container-lg">
-        <p class="text-center mb-5">We collaborate with business leaders, innovators, and policymakers to turn vision into strategy, and strategy into lasting success. With a global presence and a multidisciplinary team, we bring together strategic insight, deep industry expertise, and a commitment to sustainable progress.</p>
-        <div class="mb-5">
+        <p class="text-center mb-5 fs-5 fw-light">We collaborate with business leaders, innovators, and policymakers to turn vision into strategy, and strategy into lasting success. With a global presence and a multidisciplinary team, we bring together strategic insight, deep industry expertise, and a commitment to sustainable progress.</p>
+        <div class="mb-5 p-4 p-lg-5 rounded-5 border border-1 border-light shadow-sm">
             <h2 class="fw-normal mb-4">Our Purpose</h2>
             <div class="row">
                 <div class="col-lg-7 col-md-8">
