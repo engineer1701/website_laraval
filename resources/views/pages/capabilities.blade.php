@@ -22,34 +22,60 @@
     <div class="container-lg">
         <div class="row g-4">
             <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="capability-card rounded-4 overflow-hidden">
-                    <div class="capability-card-media position-relative">
-                        <img src="{{ asset('images/Strategic-Perspective.png') }}" class="img-fluid w-100 object-fit-cover" alt="Artificial Intelligence">
+                <div class="capability-card capability-card--ai rounded-4 overflow-hidden position-relative">
+                    <div class="capability-card-front p-4">
+                        <div class="capability-card-header mb-3">
+                            <h4 class="fw-semibold mb-2">Artificial Intelligence</h4>
+                        </div>
                     </div>
-                    <div class="capability-card-footer p-4 bg-white">
-                        <h4 class="fw-semibold mb-0">Artificial Intelligence</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="capability-card rounded-4 overflow-hidden">
-                    <div class="capability-card-media position-relative">
-                        <img src="{{ asset('images/Partnership.png') }}" class="img-fluid w-100 object-fit-cover" alt="Business and Organizational Purpose">
-                    </div>
-                    <div class="capability-card-footer p-4 bg-white">
-                        <h4 class="fw-semibold mb-0">Business and Organizational Purpose</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="capability-card rounded-4 overflow-hidden position-relative">
-                    <div class="capability-card-media position-relative">
-                        <img src="{{ asset('images/Expanding.png') }}" class="img-fluid w-100 object-fit-cover" alt="Business Resilience">
-                    </div>
-                    <div class="capability-card-overlay d-flex align-items-center justify-content-center text-dark p-4">
+                    <div class="capability-card-hover p-4">
                         <div>
-                            <h4 class="fw-semibold mb-3">Business Resilience</h4>
-                            <ul class="list-unstyled mb-0">
+                            <h5 class="fw-semibold mb-3">Artificial Intelligence</h5>
+                            <ul class="capability-hover-list mb-0">
+                                <li>Machine Learning</li>
+                                <li>Automation</li>
+                                <li>Data Analytics</li>
+                                <li>NLP</li>
+                                <li>AI Strategy</li>
+                                <li>Ethical AI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="capability-card capability-card--purpose rounded-4 overflow-hidden position-relative">
+                    <div class="capability-card-front p-4">
+                        <div class="capability-card-header mb-3">
+                            <h4 class="fw-semibold mb-2">Business and Organizational Purpose</h4>
+                        </div>
+                    </div>
+                    <div class="capability-card-hover p-4">
+                        <div>
+                            <h5 class="fw-semibold mb-3">Business and Organizational Purpose</h5>
+                            <ul class="capability-hover-list mb-0">
+                                <li>Vision &amp; Mission</li>
+                                <li>Sustainability</li>
+                                <li>Leadership</li>
+                                <li>Culture</li>
+                                <li>Stakeholders</li>
+                                <li>Impact</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="capability-card capability-card--resilience rounded-4 overflow-hidden position-relative">
+                    <div class="capability-card-front p-4">
+                        <div class="capability-card-header mb-3">
+                            <h4 class="fw-semibold mb-2">Business Resilience</h4>
+                        </div>
+                    </div>
+                    <div class="capability-card-hover p-4">
+                        <div>
+                            <h5 class="fw-semibold mb-3">Business Resilience</h5>
+                            <ul class="capability-hover-list mb-0">
                                 <li>Crisis Planning</li>
                                 <li>Continuity</li>
                                 <li>Risk Management</li>
@@ -62,12 +88,24 @@
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="capability-card rounded-4 overflow-hidden">
-                    <div class="capability-card-media position-relative">
-                        <img src="{{ asset('images/Integrity.png') }}" class="img-fluid w-100 object-fit-cover" alt="Business Transformation">
+                <div class="capability-card capability-card--transformation rounded-4 overflow-hidden position-relative">
+                    <div class="capability-card-front p-4">
+                        <div class="capability-card-header mb-3">
+                            <h4 class="fw-semibold mb-2">Business Transformation</h4>
+                        </div>
                     </div>
-                    <div class="capability-card-footer p-4 bg-white">
-                        <h4 class="fw-semibold mb-0">Business Transformation</h4>
+                    <div class="capability-card-hover p-4">
+                        <div>
+                            <h5 class="fw-semibold mb-3">Business Transformation</h5>
+                            <ul class="capability-hover-list mb-0">
+                                <li>Digital Strategy</li>
+                                <li>Automation</li>
+                                <li>Customer Experience</li>
+                                <li>Data Insights</li>
+                                <li>Change Management</li>
+                                <li>Agile Models</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

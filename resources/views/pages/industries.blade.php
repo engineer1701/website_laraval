@@ -22,17 +22,31 @@
     <div class="container-lg">
         <div class="row g-4">
             <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="industry-card rounded-4 overflow-hidden">
+                <div class="industry-card rounded-4 overflow-hidden position-relative" data-industry="insurance">
                     <img src="{{ asset('images/inds1.png') }}" class="img-fluid w-100 object-fit-cover" alt="Insurance Industry">
+                    <div class="industry-card-overlay text-dark p-4">
+                        <div>
+                            <h4 class="fw-semibold mb-3">Insurance Industry</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li>Life Insurance</li>
+                                <li>Property and Casualty Insurance</li>
+                                <li>Health Care Payers, Providers, Systems &amp; Services</li>
+                                <li>Reinsurance</li>
+                                <li>Bancassurance</li>
+                                <li>Insurtech</li>
+                                <li>Insurance Transformation</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="industry-card-footer p-4 bg-white">
                         <h4 class="fw-semibold mb-0">Insurance Industry</h4>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="industry-card rounded-4 overflow-hidden position-relative">
+                <div class="industry-card rounded-4 overflow-hidden position-relative" data-industry="aerospace">
                     <img src="{{ asset('images/inds2.png') }}" class="img-fluid w-100 object-fit-cover" alt="Aerospace and Defense">
-                    <div class="industry-card-overlay d-flex align-items-center justify-content-center text-white p-4">
+                    <div class="industry-card-overlay text-dark p-4">
                         <div>
                             <h4 class="fw-semibold mb-3">Aerospace and Defense</h4>
                             <ul class="list-unstyled mb-0">
@@ -45,19 +59,48 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="industry-card-footer p-4 bg-white">
+                        <h4 class="fw-semibold mb-0">Aerospace and Defense</h4>
+                    </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="industry-card rounded-4 overflow-hidden">
+                <div class="industry-card rounded-4 overflow-hidden position-relative" data-industry="automotive">
                     <img src="{{ asset('images/inds3.png') }}" class="img-fluid w-100 object-fit-cover" alt="Automotive Industry">
+                    <div class="industry-card-overlay text-dark p-4">
+                        <div>
+                            <h4 class="fw-semibold mb-3">Automotive Industry</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li>EVs</li>
+                                <li>Autonomous Driving</li>
+                                <li>Connected Mobility</li>
+                                <li>Manufacturing</li>
+                                <li>Aftermarket</li>
+                                <li>Green Mobility</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="industry-card-footer p-4 bg-white">
                         <h4 class="fw-semibold mb-0">Automotive Industry</h4>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="industry-card rounded-4 overflow-hidden">
+                <div class="industry-card rounded-4 overflow-hidden position-relative" data-industry="consumer">
                     <img src="{{ asset('images/inds4.png') }}" class="img-fluid w-100 object-fit-cover" alt="Consumer Products Industry">
+                    <div class="industry-card-overlay text-dark p-4">
+                        <div>
+                            <h4 class="fw-semibold mb-3">Consumer Products Industry</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li>Retail</li>
+                                <li>E-commerce</li>
+                                <li>Branding</li>
+                                <li>Supply Chain</li>
+                                <li>Sustainability</li>
+                                <li>Customer Insights</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="industry-card-footer p-4 bg-white">
                         <h4 class="fw-semibold mb-0">Consumer Products Industry</h4>
                     </div>

@@ -394,6 +394,32 @@ footer a:focus {
 .capability-card {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.capability-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
+}
+
+.capability-card--ai {
+  background: linear-gradient(180deg, #eef3ff 0%, #d7e4ff 100%);
+}
+
+.capability-card--purpose {
+  background: linear-gradient(180deg, #fff5ea 0%, #ffe7ce 100%);
+}
+
+.capability-card--resilience {
+  background: linear-gradient(180deg, #edf7ef 0%, #d7eed8 100%);
+}
+
+.capability-card--transformation {
+  background: linear-gradient(180deg, #f6eefb 0%, #e7d9f6 100%);
+}
+
+.capability-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.14);
 }
 
 .industry-card img,
@@ -407,22 +433,139 @@ footer a:focus {
   min-height: 90px;
 }
 
-.industry-card-overlay,
-.capability-card-overlay {
+.capability-card-header h4 {
+  font-size: 1.2rem;
+}
+
+.capability-card-header p {
+  color: #5f6c7b;
+}
+
+.capability-points {
+  padding-left: 1rem;
+}
+
+.capability-points li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  padding-left: 1.2rem;
+  color: #202a35;
+}
+
+.capability-points li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: #1363df;
+  font-weight: bold;
+}
+
+.capability-card-body {
+  padding-top: 0.5rem;
+}
+
+.capability-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.capability-card-front {
+  position: relative;
+  z-index: 1;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+.capability-card-hover {
   position: absolute;
   inset: 0;
-  background: rgba(88, 54, 20, 0.8);
+  background: rgba(244, 193, 79, 0.95);
+  color: #111;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.industry-card-overlay ul,
-.capability-card-overlay ul {
-  list-style: none;
-  padding-left: 0;
+.capability-card:hover .capability-card-hover,
+.capability-card:focus-within .capability-card-hover {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.industry-card-overlay li,
-.capability-card-overlay li {
-  margin-bottom: 0.4rem;
+.capability-card:hover .capability-card-front,
+.capability-card:focus-within .capability-card-front {
+  opacity: 0;
+}
+
+.capability-card:hover,
+.capability-card:focus-within {
+  transform: translateY(-6px);
+}
+
+.capability-card-hover h5 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.capability-hover-list {
+  padding-left: 1.2rem;
+  list-style: disc;
+  max-height: calc(100vh - 420px);
+  overflow: hidden;
+}
+
+.capability-hover-list li {
+  margin-bottom: 0.75rem;
+}
+
+.industry-card img {
+  transition: transform 0.35s ease;
+}
+.industry-card:hover img,
+.industry-card:focus-within img {
+  transform: scale(1.03);
+}
+
+.industry-card-footer,
+.capability-card-footer {
+  position: relative;
+  z-index: 3;
+}
+
+.industry-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 193, 79, 0.95);
+  color: #111;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  padding: 2rem 1.5rem;
+}
+
+.industry-card:hover .industry-card-overlay,
+.industry-card:focus-within .industry-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.industry-card-overlay h4 {
+  margin-bottom: 1rem;
+}
+
+.industry-card-overlay ul {
+  padding-left: 1.1rem;
+}
+
+.industry-card-overlay li {
+  margin-bottom: 0.6rem;
 }
 
 .news-slider .item {
@@ -510,14 +653,15 @@ footer a:focus {
   border: 1px solid rgba(18,88,216,0.08);
 }
 .service-card {
-  background: #fff;
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
   border: 1px solid rgba(18,88,216,0.08);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.12);
+  background: linear-gradient(180deg, #e8f0ff 0%, #d6e3ff 100%);
 }
 @media (max-width: 991px) {
   .impact-card {
@@ -642,46 +786,87 @@ footer a:focus {
   color: var(--primary);
 }
 
-.service-item {
-  aspect-ratio: 8/9;
+.service-card-tile {
   position: relative;
+  overflow: hidden;
 }
-.service-item .srvc-cont {
-  position: absolute;
+.service-card-tile img {
+  display: block;
   width: 100%;
-  top: 70%;
-  background-color: var(--grey);
-  transition: 0.3s all;
-  -webkit-transition: 0.3s all;
-  -moz-transition: 0.3s all;
-  -ms-transition: 0.3s all;
-  -o-transition: 0.3s all;
+  height: auto;
+  transition: transform 0.35s ease;
 }
-.service-item .srvc-cont .srvc-list {
+.service-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(7, 26, 67, 0) 0%, rgba(7, 26, 67, 0.7) 100%);
+  color: #fff;
+  transition: background 0.35s ease;
+}
+.service-card-overlay h4 {
+  margin: 0;
+}
+.service-card-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  transform: translateY(100%);
   opacity: 0;
-  transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -ms-transition: 0.5s all;
-  -o-transition: 0.5s all;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
 }
-.service-item:hover .srvc-cont, .service-item:focus .srvc-cont {
-  top: 0;
+.service-card-hover h5 {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
-.service-item:hover .srvc-cont .srvc-list, .service-item:focus .srvc-cont .srvc-list {
+.service-card-hover ul {
+  padding-left: 1.1rem;
+}
+.service-card-hover li {
+  margin-bottom: 0.75rem;
+}
+.service-card-tile:hover img,
+.service-card-tile:focus-within img {
+  transform: scale(1.05);
+}
+.service-card-tile:hover .service-card-hover,
+.service-card-tile:focus-within .service-card-hover {
+  transform: translateY(0);
   opacity: 1;
 }
+.service-card-tile:hover .service-card-overlay,
+.service-card-tile:focus-within .service-card-overlay {
+  background: linear-gradient(180deg, rgba(7, 26, 67, 0) 0%, rgba(7, 26, 67, 0.85) 100%);
+}
 
-@media (max-width: 1199px) {
-  .service-item h5 {
-    font-size: 16px !important;
-  }
-  .service-item.open .srvc-cont {
-    top: 0;
-  }
-  .service-item.open .srvc-cont .srvc-list {
-    opacity: 1;
-  }
+.industry-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  padding: 2rem 1.5rem;
+}
+.industry-card:hover .industry-card-overlay,
+.industry-card:focus-within .industry-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+.industry-card-overlay h4 {
+  margin-bottom: 1rem;
+}
+.industry-card-overlay ul {
+  padding-left: 1.1rem;
+}
+.industry-card-overlay li {
+  margin-bottom: 0.6rem;
 }
 .career-item {
   background-color: var(--grey);
