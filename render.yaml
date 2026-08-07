@@ -14,7 +14,7 @@ services:
       - key: APP_URL
         value: ${RENDER_EXTERNAL_URL}
       - key: APP_KEY
-        generateValue: true
+        value: base64:5GordeX6uczfMHpcGJ9Q+xygUkaLrZahdEYES0NX6sI=
       - key: DB_CONNECTION
         value: sqlite
       - key: DB_DATABASE
