@@ -20,6 +20,26 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $appKey = env('APP_KEY');
+        if (empty($appKey)) {
+            $appKey = 'base64:' . base64_encode(random_bytes(32));
+            putenv("APP_KEY={$appKey}");
+            $_ENV['APP_KEY'] = $appKey;
+            $_SERVER['APP_KEY'] = $appKey;
+            config(['app.key' => $appKey]);
+
+            $envPath = base_path('.env');
+            if (file_exists($envPath) && is_writable($envPath)) {
+                $contents = file_get_contents($envPath);
+                if (preg_match('/^APP_KEY=.*/m', $contents)) {
+                    $contents = preg_replace('/^APP_KEY=.*/m', "APP_KEY={$appKey}", $contents);
+                } else {
+                    $contents .= PHP_EOL . "APP_KEY={$appKey}" . PHP_EOL;
+                }
+                file_put_contents($envPath, $contents);
+            }
+        }
+
         // Ensure SQLite database file exists when using sqlite connection in containers
         if (config('database.default') === 'sqlite') {
             $database = env('DB_DATABASE', database_path('database.sqlite'));
