@@ -4,18 +4,22 @@
 @section('description', 'Consultancy Company helps organizations accelerate growth through strategy, operations, and transformation expertise.')
 
 @section('content')
-<section>
+<section class="hero-shell">
     <div class="px-xl-5 px-3">
-        <div class="primary-bg rounded-top-5 py-5 py-lg-6">
+        <div class="hero-panel rounded-top-5 py-5 py-lg-6">
             <div class="container-lg">
-                <div class="row gx-xl-5 gx-lg-4 gx-3 align-items-lg-center justify-content-between">
+                <div class="row gx-xl-5 gx-lg-4 gx-3 align-items-center justify-content-between">
                     <div class="col-lg-5 col-md-6">
+                        <div class="hero-badge">Strategic Advisory Services</div>
                         <h1 class="display-4 fw-bold lh-1 mb-4 text-white">Transform Strategy Into Sustainable Growth</h1>
                         <p class="mb-4 text-white fs-5">Partner with industry-leading consultants who combine deep sector expertise with innovative methodologies to solve your most complex business challenges.</p>
-                        <a href="{{ route('contact') }}" class="btn btn-type2 px-4 py-2 rounded-pill">Get Started</a>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="{{ route('contact') }}" class="btn btn-type2 px-4 py-2 rounded-pill">Get Started</a>
+                            <a href="{{ route('services') }}" class="btn btn-outline-light px-4 py-2 rounded-pill">Explore Services</a>
+                        </div>
                     </div>
                     <div class="col-lg-6 col-md-5 d-md-block d-none">
-                        <div class="text-center rounded-4 overflow-hidden border border-white border-opacity-25">
+                        <div class="hero-media rounded-4 overflow-hidden border border-white border-opacity-25">
                             <video width="100%" height="auto" autoplay loop muted playsinline>
                                 <source src="{{ asset('images/home-banner-video.mp4') }}" type="video/mp4">
                             </video>
@@ -24,33 +28,31 @@
                 </div>
             </div>
         </div>
-        <div class="secondary-bg rounded-bottom-5 py-4">
+        <div class="impact-band rounded-bottom-5 py-4">
             <div class="container">
-                <div class="row g-xl-5 g-3">
+                <div class="row g-xl-5 g-3 align-items-start">
                     <div class="col-lg-3">
-                        <h4 class="text-white">Our <br> Impact</h4>
-                        <p>Proven Track Record of Excellence - Three decades of driving measurable results for organizations across industries, from startups to Fortune 500 companies.</p>
+                        <h4 class="text-white mb-3">Our <br> Impact</h4>
+                        <p class="mb-0 text-white-50">Proven track record of excellence for organizations across industries, from startups to Fortune 500 companies.</p>
                     </div>
                     <div class="col-lg-9">
-                        <div class="row g-1 gy-3 justify-content-between lh-base">
+                        <div class="row g-3 gy-4 justify-content-between lh-base">
                             <div class="col-md-3">
-                                <div class="text-center">
+                                <div class="impact-card">
                                     <div class="display-4 fw-bold text-white"><span id="count1"></span>+</div>
-                                    <p class="mb-0">Years of Industry Leadership Pioneering consulting excellence since 1992</p>
+                                    <p class="mb-0">Years of industry leadership since 1992</p>
                                 </div>
                             </div>
-                            <div class="col-auto d-md-block d-none"><hr class="vr bg-white h-100"></div>
                             <div class="col-md-3">
-                                <div class="text-center">
+                                <div class="impact-card">
                                     <div class="display-4 fw-bold text-white"><span id="count2"></span>+</div>
-                                    <p class="mb-0">Strategic Transformations Delivered across 40+ countries worldwide</p>
+                                    <p class="mb-0">Strategic transformations delivered worldwide</p>
                                 </div>
                             </div>
-                            <div class="col-auto d-md-block d-none"><hr class="vr bg-white h-100"></div>
                             <div class="col-md-3">
-                                <div class="text-center">
+                                <div class="impact-card">
                                     <div class="display-4 fw-bold text-white"><span id="count3"></span>+</div>
-                                    <p class="mb-0">Long-Term Partnerships Clients who return for ongoing engagements</p>
+                                    <p class="mb-0">Long-term partnerships built on trust and results</p>
                                 </div>
                             </div>
                         </div>
@@ -62,9 +64,12 @@
 </section>
 <section class="py-5">
     <div class="container-lg">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4 class="fw-bold mb-0">The Leadership <span class="text-color-primary">Team</span></h4>
-            <a href="{{ route('team') }}" class="link-type1">Meet our people <span class="ms-3"><svg width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M57.7071 8.70711C58.0976 8.31658 58.0976 7.68342 57.7071 7.29289L51.3431 0.928932C50.9526 0.538408 50.3195 0.538408 49.9289 0.928932C49.5384 1.31946 49.5384 1.95262 49.9289 2.34315L55.5858 8L49.9289 13.6569C49.5384 14.0474 49.5384 14.6805 49.9289 15.0711C50.3195 15.4616 50.9526 15.4616 51.3431 15.0711L57.7071 8.70711ZM0 8V9H57V8V7H0V8Z" fill="#1363DF" /></svg></span></a>
+        <div class="section-heading d-flex justify-content-between align-items-end mb-4 gap-3">
+            <div>
+                <p class="section-eyebrow mb-2">Leadership</p>
+                <h4 class="fw-bold mb-0">The Leadership <span class="text-color-primary">Team</span></h4>
+            </div>
+            <a href="{{ route('team') }}" class="link-type1">Meet our people <span class="ms-2"><svg width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M57.7071 8.70711C58.0976 8.31658 58.0976 7.68342 57.7071 7.29289L51.3431 0.928932C50.9526 0.538408 50.3195 0.538408 49.9289 0.928932C49.5384 1.31946 49.5384 1.95262 49.9289 2.34315L55.5858 8L49.9289 13.6569C49.5384 14.0474 49.5384 14.6805 49.9289 15.0711C50.3195 15.4616 50.9526 15.4616 51.3431 15.0711L57.7071 8.70711ZM0 8V9H57V8V7H0V8Z" fill="#1363DF" /></svg></span></a>
         </div>
         <div class="team-slider owl-carousel owl-theme">
             @forelse($teamMembers as $member)
@@ -92,40 +97,41 @@
 </section>
 <section class="py-5" id="services">
     <div class="container-lg">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="section-heading d-flex justify-content-between align-items-end mb-4 gap-3">
             <div>
+                <p class="section-eyebrow mb-2">Services</p>
                 <h4 class="fw-bold text-color-primary mb-0">Our Services</h4>
                 <p class="mb-0">End-to-end solutions designed to accelerate performance and unlock new value across your organization.</p>
             </div>
-            <a href="{{ route('about') }}" class="link-type1">Explore more <span class="ms-3"><svg width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M57.7071 8.70711C58.0976 8.31658 58.0976 7.68342 57.7071 7.29289L51.3431 0.928932C50.9526 0.538408 50.3195 0.538408 49.9289 0.928932C49.5384 1.31946 49.5384 1.95262 49.9289 2.34315L55.5858 8L49.9289 13.6569C49.5384 14.0474 49.5384 14.6805 49.9289 15.0711C50.3195 15.4616 50.9526 15.4616 51.3431 15.0711L57.7071 8.70711ZM0 8V9H57V8V7H0V8Z" fill="#1363DF" /></svg></span></a>
+            <a href="{{ route('about') }}" class="link-type1">Explore more <span class="ms-2"><svg width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M57.7071 8.70711C58.0976 8.31658 58.0976 7.68342 57.7071 7.29289L51.3431 0.928932C50.9526 0.538408 50.3195 0.538408 49.9289 0.928932C49.5384 1.31946 49.5384 1.95262 49.9289 2.34315L55.5858 8L49.9289 13.6569C49.5384 14.0474 49.5384 14.6805 49.9289 15.0711C50.3195 15.4616 50.9526 15.4616 51.3431 15.0711L57.7071 8.70711ZM0 8V9H57V8V7H0V8Z" fill="#1363DF" /></svg></span></a>
         </div>
         <div class="service-slider owl-carousel owl-theme">
             <div class="item">
-                <div class="service-card">
-                    <div class="srvc-icon rounded-3 secondary-bg mb-2"><img src="{{ asset('images/icon-Finance.svg') }}" class="img-fluid" alt="Finance"></div>
-                    <h4 class="text-color-primary">Finance</h4>
-                    <p>Drive financial performance through sophisticated modeling, capital structure optimization, and M&amp;A advisory.</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="service-card">
-                    <div class="srvc-icon rounded-3 secondary-bg mb-2"><img src="{{ asset('images/icon-StrategicPlanning.svg') }}" class="img-fluid" alt="Strategic Planning"></div>
+                <div class="service-card rounded-4 p-4 h-100">
+                    <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-StrategicPlanning.svg') }}" class="img-fluid" alt="Strategic Planning"></div>
                     <h4 class="text-color-primary">Strategic Planning</h4>
-                    <p>Develop competitive strategies that position your organization for long-term success.</p>
+                    <p class="mb-0">Develop competitive strategies that position your organization for long-term success, from market entry to digital transformation roadmaps.</p>
                 </div>
             </div>
             <div class="item">
-                <div class="service-card">
-                    <div class="srvc-icon rounded-3 secondary-bg mb-2"><img src="{{ asset('images/icon-Capabilities.svg') }}" class="img-fluid" alt="Capabilities"></div>
+                <div class="service-card rounded-4 p-4 h-100">
+                    <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-Capabilities.svg') }}" class="img-fluid" alt="Capabilities"></div>
                     <h4 class="text-color-primary">Capabilities</h4>
-                    <p>Elevate organizational performance through process redesign, technology enablement, and operational excellence programs.</p>
+                    <p class="mb-0">Elevate organizational performance through process redesign, technology enablement, and operational excellence programs.</p>
                 </div>
             </div>
             <div class="item">
-                <div class="service-card">
-                    <div class="srvc-icon rounded-3 secondary-bg mb-2"><img src="{{ asset('images/icon-HumanResources.svg') }}" class="img-fluid" alt="Human Resources"></div>
+                <div class="service-card rounded-4 p-4 h-100">
+                    <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-HumanResources.svg') }}" class="img-fluid" alt="Human Resources"></div>
                     <h4 class="text-color-primary">Human Resources</h4>
-                    <p>Transform your workforce into a competitive advantage with talent strategy, leadership development, and culture transformation.</p>
+                    <p class="mb-0">Transform your workforce with talent strategy, leadership development, change management, and culture transformation.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="service-card rounded-4 p-4 h-100">
+                    <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-Finance.svg') }}" class="img-fluid" alt="Finance"></div>
+                    <h4 class="text-color-primary">Finance</h4>
+                    <p class="mb-0">Drive financial performance through sophisticated modeling, capital structure optimization, and M&amp;A advisory.</p>
                 </div>
             </div>
         </div>
@@ -133,13 +139,14 @@
 </section>
 <section>
     <div class="px-xl-5 px-3">
-        <div class="grey-bg rounded-5 py-md-y py-5">
+        <div class="approach-panel rounded-5 py-5">
             <div class="container-lg">
                 <div class="row g-xl-5 align-items-center justify-content-between">
                     <div class="col-lg-4 col-md-5 d-md-block d-none">
-                        <img src="{{ asset('images/approach-bg.png') }}" class="img-fluid" alt="Our Approach">
+                        <img src="{{ asset('images/approach-bg.png') }}" class="img-fluid rounded-4" alt="Our Approach">
                     </div>
                     <div class="col-md-6">
+                        <p class="section-eyebrow mb-2">Approach</p>
                         <h2 class="display-5 fw-bold">Our Approach</h2>
                         <h3 class="fs-2 fw-bold text-color-secondary">We collaborate, analyze, and transform.</h3>
                         <p class="fs-4 mb-0">Every engagement begins with deep listening and rigorous analysis. We work shoulder-to-shoulder with your teams, combining external perspective with internal knowledge to design solutions that stick.</p>
@@ -151,9 +158,13 @@
 </section>
 <section class="py-5">
     <div class="container-lg">
-        <div class="mb-4">
-            <h4 class="fw-bold text-color-primary mb-0">News and Updates</h4>
-            <p class="mb-0">Explore our recent announcements, success stories, and expert analysis on the trends reshaping business strategy, leadership, and organizational effectiveness.</p>
+        <div class="section-heading d-flex justify-content-between align-items-end mb-4 gap-3">
+            <div>
+                <p class="section-eyebrow mb-2">Insights</p>
+                <h4 class="fw-bold text-color-primary mb-0">News and Updates</h4>
+                <p class="mb-0">Explore our recent announcements, success stories, and expert analysis on the trends reshaping business strategy, leadership, and organizational effectiveness.</p>
+            </div>
+            <a href="{{ route('news') }}" class="link-type1">Explore more</a>
         </div>
         <div class="news-slider owl-carousel owl-theme">
             @forelse($articles as $article)
@@ -186,6 +197,7 @@
     <div class="container-lg">
         <div class="row g-3 gy-4 justify-content-between">
             <div class="col-xl-4 col-lg-5">
+                <p class="section-eyebrow mb-2">FAQ</p>
                 <h2>
                     <div class="display-4 fw-medium">Frequently</div>
                     <div class="display-6 fw-medium">asked questions.</div>
