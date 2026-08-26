@@ -40,19 +40,19 @@
                             <div class="col-md-3">
                                 <div class="impact-card">
                                     <div class="display-4 fw-bold text-white"><span id="count1"></span>+</div>
-                                    <p class="mb-0">Years of industry leadership since 1992</p>
+                                    <p class="mb-0">Years of Industry Leadership Pioneering consulting excellence since 1992</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="impact-card">
                                     <div class="display-4 fw-bold text-white"><span id="count2"></span>+</div>
-                                    <p class="mb-0">Strategic transformations delivered worldwide</p>
+                                    <p class="mb-0">Strategic Transformations Delivered across 40+ countries worldwide</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="impact-card">
                                     <div class="display-4 fw-bold text-white"><span id="count3"></span>+</div>
-                                    <p class="mb-0">Long-term partnerships built on trust and results</p>
+                                    <p class="mb-0">Long-Term Partnerships Clients who return for ongoing engagements</p>
                                 </div>
                             </div>
                         </div>
@@ -101,37 +101,35 @@
             <div>
                 <p class="section-eyebrow mb-2">Services</p>
                 <h4 class="fw-bold text-color-primary mb-0">Our Services</h4>
-                <p class="mb-0">End-to-end solutions designed to accelerate performance and unlock new value across your organization.</p>
             </div>
-            <a href="{{ route('about') }}" class="link-type1">Explore more <span class="ms-2"><svg width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M57.7071 8.70711C58.0976 8.31658 58.0976 7.68342 57.7071 7.29289L51.3431 0.928932C50.9526 0.538408 50.3195 0.538408 49.9289 0.928932C49.5384 1.31946 49.5384 1.95262 49.9289 2.34315L55.5858 8L49.9289 13.6569C49.5384 14.0474 49.5384 14.6805 49.9289 15.0711C50.3195 15.4616 50.9526 15.4616 51.3431 15.0711L57.7071 8.70711ZM0 8V9H57V8V7H0V8Z" fill="#1363DF" /></svg></span></a>
         </div>
         <div class="service-slider owl-carousel owl-theme">
             <div class="item">
                 <div class="service-card rounded-4 p-4 h-100">
+                    <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-Finance.svg') }}" class="img-fluid" alt="Finance"></div>
+                    <h4 class="text-color-primary">Finance</h4>
+                    <p class="mb-0">Drive financial performance through sophisticated modeling, capital structure optimization, and M&A advisory. We help CFOs make data-driven decisions that improve margins, manage risk, and maximize shareholder value in dynamic market conditions.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="service-card rounded-4 p-4 h-100">
                     <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-StrategicPlanning.svg') }}" class="img-fluid" alt="Strategic Planning"></div>
                     <h4 class="text-color-primary">Strategic Planning</h4>
-                    <p class="mb-0">Develop competitive strategies that position your organization for long-term success, from market entry to digital transformation roadmaps.</p>
+                    <p class="mb-0">Develop competitive strategies that position your organization for long-term success. From market entry and portfolio optimization to digital transformation roadmaps, we translate vision into executable plans with clear milestones and accountability frameworks.</p>
                 </div>
             </div>
             <div class="item">
                 <div class="service-card rounded-4 p-4 h-100">
                     <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-Capabilities.svg') }}" class="img-fluid" alt="Capabilities"></div>
                     <h4 class="text-color-primary">Capabilities</h4>
-                    <p class="mb-0">Elevate organizational performance through process redesign, technology enablement, and operational excellence programs.</p>
+                    <p class="mb-0">Elevate organizational performance through process redesign, technology enablement, and operational excellence programs. We identify efficiency gaps, implement lean methodologies, and build the agility needed to adapt in rapidly changing environments.</p>
                 </div>
             </div>
             <div class="item">
                 <div class="service-card rounded-4 p-4 h-100">
                     <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-HumanResources.svg') }}" class="img-fluid" alt="Human Resources"></div>
                     <h4 class="text-color-primary">Human Resources</h4>
-                    <p class="mb-0">Transform your workforce with talent strategy, leadership development, change management, and culture transformation.</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="service-card rounded-4 p-4 h-100">
-                    <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-Finance.svg') }}" class="img-fluid" alt="Finance"></div>
-                    <h4 class="text-color-primary">Finance</h4>
-                    <p class="mb-0">Drive financial performance through sophisticated modeling, capital structure optimization, and M&amp;A advisory.</p>
+                    <p class="mb-0">Transform your workforce into a competitive advantage. Our HR solutions span talent strategy, leadership development, change management, and culture transformation—creating organizations where top performers want to build their careers.</p>
                 </div>
             </div>
         </div>
@@ -149,7 +147,7 @@
                         <p class="section-eyebrow mb-2">Approach</p>
                         <h2 class="display-5 fw-bold">Our Approach</h2>
                         <h3 class="fs-2 fw-bold text-color-secondary">We collaborate, analyze, and transform.</h3>
-                        <p class="fs-4 mb-0">Every engagement begins with deep listening and rigorous analysis. We work shoulder-to-shoulder with your teams, combining external perspective with internal knowledge to design solutions that stick.</p>
+                        <p class="fs-4 mb-0">Every engagement begins with deep listening and rigorous analysis. We work shoulder-to-shoulder with your teams, combining external perspective with internal knowledge to design solutions that stick. Our methodology ensures lasting impact through hands-on implementation support and capability building that continues long after our engagement ends.</p>
                     </div>
                 </div>
             </div>
@@ -161,8 +159,7 @@
         <div class="section-heading d-flex justify-content-between align-items-end mb-4 gap-3">
             <div>
                 <p class="section-eyebrow mb-2">Insights</p>
-                <h4 class="fw-bold text-color-primary mb-0">News and Updates</h4>
-                <p class="mb-0">Explore our recent announcements, success stories, and expert analysis on the trends reshaping business strategy, leadership, and organizational effectiveness.</p>
+                <h4 class="fw-bold text-color-primary mb-0">Our Insights</h4>
             </div>
             <a href="{{ route('news') }}" class="link-type1">Explore more</a>
         </div>
@@ -211,7 +208,7 @@
                             <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion1" aria-expanded="false" aria-controls="faq-accordion1">What industries do you specialize in, and how do you customize your approach?</button>
                         </h2>
                         <div id="faq-accordion1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">We specialize in HR, Strategic Planning, Product Development, Financial Planning, and M&amp;A advisory. For each client, we tailor strategies based on industry trends and organizational goals to ensure measurable outcomes.</div>
+                            <div class="accordion-body">We specialize in a broad range of industries including HR, Strategic Planning, Product Development, Financial Planning, and Mergers &amp; Acquisitions. For each client, we perform an in-depth analysis of their specific needs, industry trends, and organizational structure. Based on this, we design tailored strategies and actionable plans that align with the client's goals, ensuring maximum impact and measurable results.</div>
                         </div>
                     </div>
                     <div class="accordion-item border">
@@ -219,7 +216,7 @@
                             <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion2" aria-expanded="false" aria-controls="faq-accordion2">How long does a typical consulting engagement last, and what is the investment range?</button>
                         </h2>
                         <div id="faq-accordion2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">Engagements typically range from 6 weeks to 6 months depending on project complexity and client requirements. We provide a transparent proposal with timelines, milestones, and expected ROI.</div>
+                            <div class="accordion-body">Consulting engagements typically range from 6 weeks to 6 months depending on the project complexity and client requirements. Investment varies based on the scope of work, team involvement, and desired deliverables. We provide a transparent proposal outlining timelines, milestones, and costs to ensure clients understand the commitment and expected ROI upfront.</div>
                         </div>
                     </div>
                     <div class="accordion-item border">
@@ -227,7 +224,7 @@
                             <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion3" aria-expanded="false" aria-controls="faq-accordion3">What differentiates your methodology from other consulting firms?</button>
                         </h2>
                         <div id="faq-accordion3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">Our methodology combines deep industry expertise with a client-centric approach. We focus on actionable strategies, continuous feedback, and implementation support that drives lasting impact.</div>
+                            <div class="accordion-body">Our methodology combines deep industry expertise with a client-centric approach. Unlike traditional consulting, we focus on actionable strategies rather than just recommendations. We use data-driven insights, collaborative workshops, and continuous feedback loops to ensure solutions are practical, measurable, and adaptable. This ensures clients achieve both short-term wins and long-term growth.</div>
                         </div>
                     </div>
                     <div class="accordion-item border">
@@ -235,7 +232,7 @@
                             <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion4" aria-expanded="false" aria-controls="faq-accordion4">How do you measure success and ensure sustainable results after the project ends?</button>
                         </h2>
                         <div id="faq-accordion4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">Success is measured using predefined KPIs, client satisfaction metrics, and tangible outcomes. We provide handover documentation, training, and follow-up reviews to support long-term adoption.</div>
+                            <div class="accordion-body">Success is measured using predefined KPIs, client satisfaction metrics, and tangible outcomes such as revenue growth, operational efficiency, or project milestones achieved. To ensure sustainability, we provide comprehensive handover documentation, training sessions for client teams, and follow-up reviews. Our goal is to empower clients to continue implementing best practices long after the engagement concludes.</div>
                         </div>
                     </div>
                 </div>

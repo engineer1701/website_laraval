@@ -37,6 +37,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('news') }}">Insights</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('testimonials') }}">Testimonials</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('team') }}">Our Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('careers') }}">Career</a></li>
                         <li class="nav-item"><a class="nav-link pe-0" href="{{ route('contact') }}">Contact Us</a></li>
@@ -75,10 +76,15 @@
                             <div class="d-flex justify-content-lg-end justify-content-center flex-wrap gap-3 small">
                                 <a href="{{ route('contact') }}" class="nav-link">Contact Us</a>
                                 <a href="{{ route('faq') }}" class="nav-link">FAQ</a>
-                                <a href="{{ route('news') }}" class="nav-link">Insights</a>
-                                <a href="{{ route('careers') }}" class="nav-link">Career</a>
+                                <a href="{{ route('privacy-policy') }}" class="nav-link">Privacy Policy</a>
+                                <a href="{{ route('terms-of-service') }}" class="nav-link">Terms &amp; Conditions</a>
+                            </div>
+                            <div class="d-flex justify-content-lg-end justify-content-center flex-wrap gap-3 small">
                                 <a href="{{ route('about') }}" class="nav-link">About Us</a>
+                                <a href="{{ route('services') }}" class="nav-link">Our Services</a>
+                                <a href="{{ route('news') }}" class="nav-link">Our Insights</a>
                                 <a href="{{ route('team') }}" class="nav-link">Our Team</a>
+                                <a href="{{ route('careers') }}" class="nav-link">Career</a>
                             </div>
                             <div class="d-flex justify-content-lg-end justify-content-center flex-wrap gap-3 fs-5">
                                 <a href="" aria-label="Facebook"><i class="bi bi-facebook"></i></a>

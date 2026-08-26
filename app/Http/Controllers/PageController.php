@@ -14,13 +14,21 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    private function orderedServices()
+    {
+        return Service::orderByRaw("CASE title WHEN 'Finance' THEN 1 WHEN 'Strategic Planning' THEN 2 WHEN 'Capabilities' THEN 3 WHEN 'Human Resources' THEN 4 ELSE 5 END")
+            ->orderBy('id')
+            ->get();
+    }
+
     public function home()
     {
         $teamMembers = TeamMember::latest()->take(4)->get();
         $testimonials = Testimonial::latest()->take(3)->get();
         $articles = Article::latest('published_at')->take(4)->get();
+        $services = $this->orderedServices();
 
-        return view('pages.home', compact('teamMembers', 'testimonials', 'articles'));
+        return view('pages.home', compact('teamMembers', 'testimonials', 'articles', 'services'));
     }
 
     public function about()
@@ -58,6 +66,23 @@ class PageController extends Controller
         return view('pages.faq');
     }
 
+    public function testimonials()
+    {
+        $testimonials = Testimonial::latest()->get();
+
+        return view('pages.testimonials', compact('testimonials'));
+    }
+
+    public function privacyPolicy()
+    {
+        return view('pages.privacy-policy');
+    }
+
+    public function termsOfService()
+    {
+        return view('pages.terms-of-service');
+    }
+
     public function careers()
     {
         $careers = Career::latest()->get();
@@ -86,7 +111,7 @@ class PageController extends Controller
 
     public function services()
     {
-        $services = Service::latest()->get();
+        $services = $this->orderedServices();
 
         return view('pages.services', compact('services'));
     }
