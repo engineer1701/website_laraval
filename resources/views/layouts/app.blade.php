@@ -31,10 +31,58 @@
                         <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About Us</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-start w-100" href="{{ route('services') }}" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Services</a>
-                            <ul class="dropdown-menu rounded-0 border-0 py-0" aria-labelledby="servicesDropdown">
-                                <li><a class="dropdown-item nav-link fs-7" href="{{ route('industries') }}">Industries</a></li>
-                                <li><a class="dropdown-item nav-link fs-7" href="{{ route('capabilities') }}">Capabilities</a></li>
-                            </ul>
+                            <div class="dropdown-menu services-mega-menu rounded-0 border-0" aria-labelledby="servicesDropdown">
+                                <input class="services-mega-tab-input" type="radio" name="services-mega-tab" id="services-industries-tab" checked>
+                                <input class="services-mega-tab-input" type="radio" name="services-mega-tab" id="services-capabilities-tab">
+                                <div class="services-mega-tabs" role="tablist" aria-label="Our Services sections">
+                                    <label for="services-industries-tab" role="tab">Industries</label>
+                                    <label for="services-capabilities-tab" role="tab">Capabilities</label>
+                                </div>
+                                <div class="services-mega-panel services-mega-industries" role="tabpanel">
+                                    <a class="services-mega-card" href="{{ route('industries') }}">
+                                        <img src="{{ asset('images/inds1.png') }}" alt="Insurance Industry">
+                                        <strong>Insurance Industry</strong>
+                                        <ul><li>Life Insurance</li><li>Property and Casualty Insurance</li><li>Health Care Payers, Providers, Systems &amp; Services</li><li>Reinsurance</li><li>Bancassurance</li><li>Insurtech</li><li>Insurance Transformation</li></ul>
+                                    </a>
+                                    <a class="services-mega-card" href="{{ route('industries') }}">
+                                        <img src="{{ asset('images/inds2.png') }}" alt="Aerospace and Defense">
+                                        <strong>Aerospace and Defense</strong>
+                                        <ul><li>Aviation</li><li>Defense Systems</li><li>Space</li><li>Cybersecurity</li><li>Supply Chain</li><li>Sustainability</li></ul>
+                                    </a>
+                                    <a class="services-mega-card" href="{{ route('industries') }}">
+                                        <img src="{{ asset('images/inds3.png') }}" alt="Automotive Industry">
+                                        <strong>Automotive Industry</strong>
+                                        <ul><li>EVs</li><li>Autonomous Driving</li><li>Connected Mobility</li><li>Manufacturing</li><li>Aftermarket</li><li>Green Mobility</li></ul>
+                                    </a>
+                                    <a class="services-mega-card" href="{{ route('industries') }}">
+                                        <img src="{{ asset('images/inds4.png') }}" alt="Consumer Products Industry">
+                                        <strong>Consumer Products Industry</strong>
+                                        <ul><li>Retail</li><li>E-commerce</li><li>Branding</li><li>Supply Chain</li><li>Sustainability</li><li>Customer Insights</li></ul>
+                                    </a>
+                                </div>
+                                <div class="services-mega-panel services-mega-capabilities" role="tabpanel">
+                                    <a class="services-mega-card" href="{{ route('capabilities') }}">
+                                        <img src="https://html.reubro.com/consultancy-company/images/ai-img.jpg" alt="Artificial Intelligence">
+                                        <strong>Artificial Intelligence</strong>
+                                        <ul><li>Machine Learning</li><li>Automation</li><li>Data Analytics</li><li>NLP</li><li>AI Strategy</li><li>Ethical AI</li></ul>
+                                    </a>
+                                    <a class="services-mega-card" href="{{ route('capabilities') }}">
+                                        <img src="https://html.reubro.com/consultancy-company/images/business-img.jpg" alt="Business and Organizational Purpose">
+                                        <strong>Business and Organizational Purpose</strong>
+                                        <ul><li>Vision &amp; Mission</li><li>Sustainability</li><li>Leadership</li><li>Culture</li><li>Stakeholders</li><li>Impact</li></ul>
+                                    </a>
+                                    <a class="services-mega-card" href="{{ route('capabilities') }}">
+                                        <img src="https://html.reubro.com/consultancy-company/images/Business-Resilience-img.jpg" alt="Business Resilience">
+                                        <strong>Business Resilience</strong>
+                                        <ul><li>Crisis Planning</li><li>Continuity</li><li>Risk Management</li><li>Agility</li><li>Cybersecurity</li><li>Financial Stability</li></ul>
+                                    </a>
+                                    <a class="services-mega-card" href="{{ route('capabilities') }}">
+                                        <img src="https://html.reubro.com/consultancy-company/images/Business-Transformation-img.jpg" alt="Business Transformation">
+                                        <strong>Business Transformation</strong>
+                                        <ul><li>Digital Strategy</li><li>Automation</li><li>Customer Experience</li><li>Data Insights</li><li>Change Management</li><li>Agile Models</li></ul>
+                                    </a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('news') }}">Our Insights</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('testimonials') }}">Testimonials</a></li>

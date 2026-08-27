@@ -302,6 +302,120 @@ footer a:focus {
   color: var(--light);
 }
 
+@media (min-width: 1024px) {
+  header li.nav-item.dropdown .services-mega-menu {
+    left: 50%;
+    width: min(1120px, calc(100vw - 32px));
+    padding: 0;
+    background: #f7f5f0;
+    transform: translate(-50%, 40px);
+  }
+  header li.nav-item.dropdown:hover .services-mega-menu,
+  header li.nav-item.dropdown.showhide .services-mega-menu {
+    transform: translate(-50%, 0);
+  }
+  .services-mega-tab-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .services-mega-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(19, 36, 61, 0.15);
+    padding: 0 24px;
+  }
+  .services-mega-tabs label {
+    color: #13243d;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 18px 24px 15px;
+  }
+  #services-industries-tab:checked ~ .services-mega-tabs label[for="services-industries-tab"],
+  #services-capabilities-tab:checked ~ .services-mega-tabs label[for="services-capabilities-tab"] {
+    border-bottom: 3px solid var(--primary);
+    color: var(--primary);
+  }
+  .services-mega-panel {
+    display: none;
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 24px;
+  }
+  #services-industries-tab:checked ~ .services-mega-industries,
+  #services-capabilities-tab:checked ~ .services-mega-capabilities {
+    display: grid;
+  }
+  .services-mega-card {
+    color: #566579;
+    display: block;
+    font-size: 13px;
+    line-height: 1.45;
+    text-decoration: none;
+  }
+  .services-mega-card img {
+    aspect-ratio: 16 / 9;
+    border-radius: 8px 8px 0 0;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+  }
+  .services-mega-card strong {
+    color: #13243d;
+    display: block;
+    font-size: 15px;
+    padding-top: 12px;
+  }
+  .services-mega-card ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+  }
+  .services-mega-card:hover strong {
+    color: var(--primary);
+  }
+}
+
+@media (max-width: 1023px) {
+  .offcanvas .services-mega-menu {
+    background: transparent;
+    box-shadow: none;
+    display: block;
+    opacity: 1;
+    padding: 0;
+    position: static;
+    transform: none;
+    visibility: visible;
+  }
+  .services-mega-tab-input,
+  .services-mega-tabs {
+    display: none;
+  }
+  .services-mega-panel {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .services-mega-capabilities {
+    display: grid !important;
+  }
+  .services-mega-card {
+    align-items: center;
+    border-bottom: 1px solid rgba(209, 167, 95, 0.25);
+    display: flex;
+    gap: 12px;
+    padding: 10px 0 10px 35px;
+  }
+  .services-mega-card img,
+  .services-mega-card ul {
+    display: none;
+  }
+  .services-mega-card strong {
+    color: inherit;
+    font-size: 14px;
+    padding: 0;
+  }
+}
+
 @media (max-width: 1023px) {
   .offcanvas .navbar-nav {
     padding: 0 50px 50px;
