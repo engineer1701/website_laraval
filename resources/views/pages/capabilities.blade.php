@@ -20,19 +20,13 @@
 </section>
 <section class="py-5">
     <div class="container-lg">
-        <div class="row g-4">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="capability-card capability-card--ai rounded-4 overflow-hidden position-relative">
-                    <div class="capability-card-front p-4">
-                        <img src="https://html.reubro.com/consultancy-company/images/ai-img.jpg" class="img-fluid" alt="Artificial Intelligence">
-                        <div class="capability-card-header mb-3">
-                            <h4 class="fw-semibold mb-2">Artificial Intelligence</h4>
-                        </div>
-                    </div>
-                    <div class="capability-card-hover p-4">
-                        <div>
-                            <h5 class="fw-semibold mb-3">Artificial Intelligence</h5>
-                            <ul class="capability-hover-list mb-0">
+        <div class="row g-2">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <img src="https://html.reubro.com/consultancy-company/images/ai-img.jpg" class="h-100 w-100 object-fit-cover" alt="">
+                    <div class="srvc-cont p-3 h-100">
+                            <h5 class="mb-3">Artificial Intelligence</h5>
+                            <ul class="srvc-list fw-light">
                                 <li>Machine Learning</li>
                                 <li>Automation</li>
                                 <li>Data Analytics</li>
@@ -40,22 +34,15 @@
                                 <li>AI Strategy</li>
                                 <li>Ethical AI</li>
                             </ul>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="capability-card capability-card--purpose rounded-4 overflow-hidden position-relative">
-                    <div class="capability-card-front p-4">
-                        <img src="https://html.reubro.com/consultancy-company/images/business-img.jpg" class="img-fluid" alt="Business and Organizational Purpose">
-                        <div class="capability-card-header mb-3">
-                            <h4 class="fw-semibold mb-2">Business and Organizational Purpose</h4>
-                        </div>
-                    </div>
-                    <div class="capability-card-hover p-4">
-                        <div>
-                            <h5 class="fw-semibold mb-3">Business and Organizational Purpose</h5>
-                            <ul class="capability-hover-list mb-0">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <img src="https://html.reubro.com/consultancy-company/images/business-img.jpg" class="h-100 w-100 object-fit-cover" alt="">
+                    <div class="srvc-cont p-3 h-100">
+                            <h5 class="mb-3">Business and Organizational Purpose</h5>
+                            <ul class="srvc-list fw-light">
                                 <li>Vision &amp; Mission</li>
                                 <li>Sustainability</li>
                                 <li>Leadership</li>
@@ -63,22 +50,15 @@
                                 <li>Stakeholders</li>
                                 <li>Impact</li>
                             </ul>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="capability-card capability-card--resilience rounded-4 overflow-hidden position-relative">
-                    <div class="capability-card-front p-4">
-                        <img src="https://html.reubro.com/consultancy-company/images/Business-Resilience-img.jpg" class="img-fluid" alt="Business Resilience">
-                        <div class="capability-card-header mb-3">
-                            <h4 class="fw-semibold mb-2">Business Resilience</h4>
-                        </div>
-                    </div>
-                    <div class="capability-card-hover p-4">
-                        <div>
-                            <h5 class="fw-semibold mb-3">Business Resilience</h5>
-                            <ul class="capability-hover-list mb-0">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <img src="https://html.reubro.com/consultancy-company/images/Business-Resilience-img.jpg" class="h-100 w-100 object-fit-cover" alt="">
+                    <div class="srvc-cont p-3 h-100">
+                            <h5 class="mb-3">Business Resilience</h5>
+                            <ul class="srvc-list fw-light">
                                 <li>Crisis Planning</li>
                                 <li>Continuity</li>
                                 <li>Risk Management</li>
@@ -86,22 +66,15 @@
                                 <li>Cybersecurity</li>
                                 <li>Financial Stability</li>
                             </ul>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="capability-card capability-card--transformation rounded-4 overflow-hidden position-relative">
-                    <div class="capability-card-front p-4">
-                        <img src="https://html.reubro.com/consultancy-company/images/Business-Transformation-img.jpg" class="img-fluid" alt="Business Transformation">
-                        <div class="capability-card-header mb-3">
-                            <h4 class="fw-semibold mb-2">Business Transformation</h4>
-                        </div>
-                    </div>
-                    <div class="capability-card-hover p-4">
-                        <div>
-                            <h5 class="fw-semibold mb-3">Business Transformation</h5>
-                            <ul class="capability-hover-list mb-0">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <img src="https://html.reubro.com/consultancy-company/images/Business-Transformation-img.jpg" class="h-100 w-100 object-fit-cover" alt="">
+                    <div class="srvc-cont p-3 h-100">
+                            <h5 class="mb-3">Business Transformation</h5>
+                            <ul class="srvc-list fw-light">
                                 <li>Digital Strategy</li>
                                 <li>Automation</li>
                                 <li>Customer Experience</li>
@@ -109,7 +82,6 @@
                                 <li>Change Management</li>
                                 <li>Agile Models</li>
                             </ul>
-                        </div>
                     </div>
                 </div>
             </div>
