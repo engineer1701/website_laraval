@@ -21,7 +21,7 @@
 <section class="py-5">
     <div class="container-lg">
         <div class="row g-2">
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="service-item rounded-4 overflow-hidden">
                     <img src="{{ asset('images/inds1.png') }}" class="h-100 w-100 object-fit-cover" alt="">
                     <div class="srvc-cont p-3 h-100">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="service-item rounded-4 overflow-hidden">
                     <img src="{{ asset('images/inds2.png') }}" class="h-100 w-100 object-fit-cover" alt="">
                     <div class="srvc-cont p-3 h-100">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="service-item rounded-4 overflow-hidden">
                     <img src="{{ asset('images/inds3.png') }}" class="h-100 w-100 object-fit-cover" alt="">
                     <div class="srvc-cont p-3 h-100">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="service-item rounded-4 overflow-hidden">
                     <img src="{{ asset('images/inds4.png') }}" class="h-100 w-100 object-fit-cover" alt="">
                     <div class="srvc-cont p-3 h-100">
