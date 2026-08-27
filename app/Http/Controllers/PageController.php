@@ -95,6 +95,13 @@ class PageController extends Controller
         return view('pages.career-detail', compact('career'));
     }
 
+    public function careerDetails()
+    {
+        $career = Career::where('slug', 'trading-risk-endur-functional-consulting-manager')->firstOrFail();
+
+        return view('pages.career-detail', compact('career'));
+    }
+
     public function industries()
     {
         $industries = Industry::latest()->get();

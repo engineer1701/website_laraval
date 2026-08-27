@@ -21,6 +21,9 @@
     <div class="container-lg">
         <div class="rounded-5 grey-bg p-md-5 p-sm-4 p-3">
             <h2 class="fw-bold mb-4">Privacy Policy for Consulting Company</h2>
+            <p>Effective Date: October 13, 2025</p>
+            <p>Last Updated: October 13, 2025</p>
+            <h3 class="mt-4">Introduction</h3>
             <p>Consultancy Company ("we," "our," or "us") is committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, engage our services, or interact with us through any channel.</p>
             <p>By using our website or services, you consent to the data practices described in this policy. If you do not agree with this policy, please discontinue use of our services.</p>
 

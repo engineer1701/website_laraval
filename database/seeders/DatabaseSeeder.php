@@ -24,19 +24,19 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin123'),
         ]);
 
-        Article::firstOrCreate([
+        Article::updateOrCreate([
             'slug' => 'how-cross-border-data-regulations-are-reshaping-global-business-models',
         ], [
             'title' => 'How Cross-Border Data Regulations Are Reshaping Global Business Models',
             'category' => 'Strategy',
             'image' => 'images/news-img1.jpg',
             'excerpt' => 'Organizations are fundamentally rethinking their data strategies as regulatory frameworks evolve across jurisdictions.',
-            'body' => "The convergence of GDPR, CCPA, and emerging regulations in Asia-Pacific is forcing enterprises to adopt more sophisticated data governance frameworks.\n\nBy Sarah Mitchell, Rajesh Kumar, Emma Chen, and Michael Thornton",
+            'body' => "The landscape of cross-border data transfer has transformed dramatically over the past three years. What began as regional privacy initiatives has evolved into a complex web of requirements that affect how multinational organizations store, process, and transfer information across borders. Companies that once maintained centralized data architectures are now implementing distributed systems with localized processing capabilities to meet increasingly stringent compliance requirements.\n\nThe impact extends far beyond IT departments. Legal teams are working alongside technology leaders to map data flows and assess regulatory exposure. Finance organizations are budgeting for infrastructure changes that enable data residency. Human resources departments are reconsidering how they manage employee information across global operations. This cross-functional challenge requires coordinated responses that touch every aspect of organizational operations.\n\nThree regulatory paradigms driving change\n\nToday's compliance landscape is shaped by three distinct regulatory approaches. The European Union's comprehensive framework emphasizes individual rights and consent-based processing. North American regulations focus on sector-specific protections with enforcement through private litigation. Meanwhile, Asia-Pacific jurisdictions are adopting models that balance economic development with digital sovereignty concerns.\n\nUnderstanding these different paradigms is critical for organizations operating globally. A strategy that satisfies European requirements may fall short in China or India. Companies are discovering that one-size-fits-all approaches no longer work. Instead, they need flexible architectures that can adapt to regional requirements while maintaining operational efficiency and consistent user experiences.\n\nThe technical architecture response\n\nForward-thinking organizations are adopting distributed data architectures that process information closer to its source. Edge computing capabilities allow local processing while maintaining centralized oversight. Data tokenization and encryption techniques enable analytics without exposing sensitive information across borders. These technical solutions require significant investment but provide long-term flexibility as regulations continue evolving.\n\nCloud service providers have responded by expanding their regional offerings, with providers now operating localized instances that guarantee data residency. Multi-cloud strategies are becoming more common as organizations seek to avoid vendor lock-in while meeting diverse regulatory requirements. The technical complexity has increased, but so has the sophistication of available solutions.\n\nCompetitive advantage through compliance excellence\n\nOrganizations that view regulatory compliance as purely a cost center miss significant opportunities. Companies that establish robust data governance frameworks build trust with customers and partners. This trust translates into competitive advantage, particularly in industries where data sensitivity is paramount. Financial services firms, healthcare providers, and technology companies are finding that superior data practices become market differentiators.\n\nThe most successful organizations integrate compliance into product development from the outset. Privacy by design principles ensure that new offerings meet regulatory requirements without extensive retrofitting. This proactive approach accelerates time to market and reduces technical debt. It also positions companies to expand into new markets more rapidly as they can demonstrate compliance readiness.\n\nLooking ahead: Preparing for continued evolution\n\nRegulatory frameworks will continue evolving as technology advances and societal expectations shift. Organizations should build adaptable systems rather than point solutions for current requirements. This means investing in governance capabilities, training staff across functions, and maintaining awareness of regulatory developments globally.\n\nThe companies that thrive will be those that view cross-border data regulations not as barriers but as catalysts for building more resilient, trustworthy business models. They will invest in the people, processes, and technologies needed to navigate complexity while maintaining the agility to seize global opportunities. The path forward requires strategic thinking, operational discipline, and commitment from leadership to make data governance a core competency rather than a compliance checkbox.",
             'published_at' => '2025-09-29 00:00:00',
             'is_featured' => true,
         ]);
 
-        Article::firstOrCreate([
+        Article::updateOrCreate([
             'title' => 'A Practical Framework for Succession Planning in Family Enterprises',
             'slug' => 'a-practical-framework-for-succession-planning-in-family-enterprises',
             'category' => 'Finance',
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             'published_at' => '2025-09-26 00:00:00',
         ]);
 
-        Article::firstOrCreate([
+        Article::updateOrCreate([
             'slug' => 'when-employee-departures-signal-deeper-organizational-issues',
         ], [
             'title' => 'When Employee Departures Signal Deeper Organizational Issues',
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
             'published_at' => '2025-09-23 00:00:00',
         ]);
 
-        Article::firstOrCreate([
+        Article::updateOrCreate([
             'slug' => 'sequence-of-steps-in-donating-an-enterprise',
         ], [
             'title' => 'Sequence of Steps in Donating an Enterprise',
@@ -144,27 +144,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Testimonial::firstOrCreate([
-            'name' => 'Helen Brooks',
-            'company' => 'Northstar Logistics',
-        ], [
-            'quote' => 'The team brought clarity to a complex transformation and delivered measurable improvements quickly.',
-        ]);
-
-        Testimonial::firstOrCreate([
-            'name' => 'Sofia Alvarez',
-            'company' => 'Aurelia Health',
-        ], [
-            'quote' => 'Their pragmatic approach helped us launch with confidence and focus on the right growth markets.',
-        ]);
-
-        Testimonial::firstOrCreate([
-            'name' => 'Darren Patel',
-            'company' => 'Brightlane',
-        ], [
-            'quote' => 'We saw stronger leadership alignment and a significant uplift in employee retention.',
-        ]);
-
-        Testimonial::firstOrCreate([
             'name' => 'Sarah Davies',
             'company' => 'Salesforce Consulting',
         ], [
@@ -177,6 +156,8 @@ class DatabaseSeeder extends Seeder
         ], [
             'quote' => "Our experience with Consulting Company has been exceptional. From their responsive communication platform to their responsive communication. They provided valuable insights at both organizational and individual levels, with a robust assessment of our hazard exposure. The reports were clear, actionable, and highly data-driven—'easy, simple, and relevant,' taking less than five minutes to complete while downloading reports, graphs and tailored data on demand.",
         ]);
+
+        Testimonial::whereNotIn('name', ['Sarah Davies', 'Anisha Alluri'])->delete();
 
         Service::firstOrCreate([
             'title' => 'Strategy and Growth',
@@ -213,32 +194,48 @@ class DatabaseSeeder extends Seeder
             'description' => 'Building high-performing organizational systems, leadership capability, and change readiness.',
         ]);
 
-        Career::firstOrCreate([
+        Career::updateOrCreate([
             'slug' => 'trading-risk-endur-functional-consulting-manager',
         ], [
             'title' => 'Trading & Risk Endur Functional Consulting Manager',
             'location' => 'Various locations',
             'level' => 'Senior Level',
             'employment_type' => 'Full time',
-            'summary' => 'Lead enterprise trading and risk transformation programs with a focus on operational excellence and client delivery.',
-            'responsibilities' => "Manage strategy and delivery for trading and risk platform initiatives. Work closely with clients to define requirements, roadmaps, and adoption plans. Lead cross-functional teams and ensure high-quality execution.",
-            'qualifications' => "7+ years of consulting or functional experience in trading, risk, or financial services. Strong stakeholder communication and leadership skills.",
-            'benefits' => "Health insurance, paid time off, flexible working policies.",
-            'application_email' => 'careers@consultancycompany.test',
+            'summary' => 'Job No. R00251687',
+            'responsibilities' => "Manage the migration processing for various countries especially Australia, UK-Visit Visa , Schengen Visa and USA.\nCoordinate a team of consultants to ensure efficient workflow and client satisfaction.\nProvide expert advice and guidance to clients regarding migration procedures, requirements, and options.\nConduct comprehensive assessments of clients' eligibility for various migration programs.\nMaintain up-to-date knowledge of immigration laws, policies, and procedures for different countries.\nHandle complex immigration cases and resolve any issues or challenges that may arise.",
+            'qualifications' => "Minimum of 1 year of experience as a migration Consultant.\nStrong knowledge of immigration laws, regulations, and procedures for various countries.\nKnowledge about visa processing of various countries\nExcellent communication and interpersonal skills.\nProficiency in Malayalam and English is essential.\nBachelor's degree in any field is preferred.",
+            'benefits' => "Cell phone reimbursement\nHealth insurance\nPaid sick time\nPaid time off",
+            'application_email' => 'hrd@reubro.com',
         ]);
 
-        Career::firstOrCreate([
-            'slug' => 'operations-excellence-consultant',
+        Career::updateOrCreate([
+            'slug' => 'artificial-intelligence-ai-data-science',
         ], [
-            'title' => 'Operations Excellence Consultant',
-            'location' => 'London',
-            'level' => 'Manager Level',
+            'title' => 'Artificial intelligence (AI) & data science',
+            'location' => 'Various locations',
+            'level' => 'Senior Level',
             'employment_type' => 'Full time',
-            'summary' => 'Support operations transformation programs that deliver measurable efficiency and customer experience improvements.',
-            'responsibilities' => "Drive process improvement initiatives, support operating model redesign, and help clients implement scalable delivery solutions.",
-            'qualifications' => "Experience in operations transformation, process redesign, or continuous improvement roles.",
+            'summary' => 'Help clients apply artificial intelligence and data science to solve complex business challenges.',
+            'responsibilities' => "Lead artificial intelligence and data science engagements with clients across industries.",
+            'qualifications' => "Experience in artificial intelligence, data science, or a related consulting role.",
             'benefits' => "Career development, collaborative teams, and market-leading client exposure.",
             'application_email' => 'careers@consultancycompany.test',
         ]);
+
+        Career::updateOrCreate([
+            'slug' => 'program-project-management',
+        ], [
+            'title' => 'Program & project management',
+            'location' => 'Various locations',
+            'level' => 'Senior Level',
+            'employment_type' => 'Full time',
+            'summary' => 'Lead complex programs and projects that deliver positive change for clients.',
+            'responsibilities' => "Lead cross-functional programs and projects from planning through delivery.",
+            'qualifications' => "Experience managing complex programs or projects in a consulting environment.",
+            'benefits' => "Career development, collaborative teams, and market-leading client exposure.",
+            'application_email' => 'careers@consultancycompany.test',
+        ]);
+
+        Career::where('slug', 'operations-excellence-consultant')->delete();
     }
 }

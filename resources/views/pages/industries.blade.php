@@ -10,7 +10,7 @@
             <div class="container-lg">
                 <div class="inner-page-panner row gx-xl-5 gx-lg-4 gx-3 align-items-center">
                     <div class="col-lg-7 col-md-8">
-                        <h1 class="display-5 fw-normal lh-1 mb-0 text-white">Industries</h1>
+                        <h1 class="display-5 fw-normal lh-1 mb-0 text-white">industries</h1>
                         <p class="mb-0 text-white">Learn how we draw on industry expertise to make companies more competitive.</p>
                     </div>
                 </div>
@@ -26,7 +26,6 @@
                     <img src="{{ asset('images/inds1.png') }}" class="img-fluid w-100 object-fit-cover" alt="Insurance Industry">
                     <div class="industry-card-overlay text-dark p-4">
                         <div>
-                            <h4 class="fw-semibold mb-3">Insurance Industry</h4>
                             <ul class="list-unstyled mb-0">
                                 <li>Life Insurance</li>
                                 <li>Property and Casualty Insurance</li>
@@ -48,7 +47,6 @@
                     <img src="{{ asset('images/inds2.png') }}" class="img-fluid w-100 object-fit-cover" alt="Aerospace and Defense">
                     <div class="industry-card-overlay text-dark p-4">
                         <div>
-                            <h4 class="fw-semibold mb-3">Aerospace and Defense</h4>
                             <ul class="list-unstyled mb-0">
                                 <li>Aviation</li>
                                 <li>Defense Systems</li>
@@ -69,7 +67,6 @@
                     <img src="{{ asset('images/inds3.png') }}" class="img-fluid w-100 object-fit-cover" alt="Automotive Industry">
                     <div class="industry-card-overlay text-dark p-4">
                         <div>
-                            <h4 class="fw-semibold mb-3">Automotive Industry</h4>
                             <ul class="list-unstyled mb-0">
                                 <li>EVs</li>
                                 <li>Autonomous Driving</li>
@@ -90,7 +87,6 @@
                     <img src="{{ asset('images/inds4.png') }}" class="img-fluid w-100 object-fit-cover" alt="Consumer Products Industry">
                     <div class="industry-card-overlay text-dark p-4">
                         <div>
-                            <h4 class="fw-semibold mb-3">Consumer Products Industry</h4>
                             <ul class="list-unstyled mb-0">
                                 <li>Retail</li>
                                 <li>E-commerce</li>

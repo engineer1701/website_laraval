@@ -20,15 +20,6 @@
 </section>
 <section class="py-5">
     <div class="container-lg">
-        <form method="GET" class="mb-4">
-            <label class="form-label">Filter by category</label>
-            <select name="category" class="form-select w-auto" onchange="this.form.submit()">
-                <option value="">All categories</option>
-                @foreach($categories as $category)
-                    <option value="{{ $category }}" @selected(request('category') === $category)>{{ $category }}</option>
-                @endforeach
-            </select>
-        </form>
         <div class="row g-2">
             @foreach($articles as $article)
                 <div class="col-lg-4 col-sm-6">
@@ -36,6 +27,7 @@
                         <div class="news-featured-img rounded-4 mb-4"><img src="{{ asset($article->image ?? 'images/news-img1.jpg') }}" class="object-fit-cover h-100 w-100" alt=""></div>
                         <small class="rounded-pill light-bg p-1 px-3">{{ strtoupper($article->category) }}</small>
                         <a href="{{ route('article', $article) }}" class="fs-5 fw-normal d-block my-4">{{ $article->title }}</a>
+                        <small>Report</small>
                         <small>{{ $article->published_at ? $article->published_at->format('M d, Y') : 'Published recently' }}</small>
                     </div>
                 </div>

@@ -21,34 +21,16 @@
     <div class="container-lg">
         <h2 class="fw-light display-5 mb-0">Where will you shine?</h2>
         <p class="small">Across industries and around the world, you’ll use technology and human ingenuity to create positive change.</p>
-        <div class="row g-4 mt-2 mb-4">
-            <div class="col-lg-6">
-                <div class="border rounded-4 p-4 h-100">
-                    <h3 class="fw-semibold text-color-primary">Areas of interest</h3>
-                    <p class="mb-0">We are hiring across consulting, strategy, operations, and technology transformation, with opportunities for both early-career and senior professionals.</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="border rounded-4 p-4 h-100">
-                    <h3 class="fw-semibold text-color-primary">Why join us</h3>
-                    <ul class="mb-0 ps-3">
-                        <li>Global client work with measurable impact</li>
-                        <li>Collaborative teams and career development</li>
-                        <li>A values-led culture built around integrity and growth</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="mb-4">
-            <h4 class="fw-light mb-4">Open roles</h4>
+            <h3 class="fw-semibold text-color-primary">Areas of interest</h3>
+            <h4 class="fw-light mb-4">Consulting</h4>
             <div class="row g-4">
                 @forelse($careers as $career)
                     <div class="col-lg-4 col-sm-6">
                         <div class="border rounded-4 p-4 h-100 career-item">
                             <h5>{{ $career->title }}</h5>
                             <small class="d-block mb-3">{{ $career->location ?: 'Multiple locations' }} | {{ $career->employment_type ?: 'Full time' }} | {{ $career->level ?: 'All levels' }}</small>
-                            <p class="mb-3">{{ Str::limit($career->summary, 120) }}</p>
-                            <a href="{{ route('career.detail', $career) }}" class="fw-semibold">See this job</a>
+                            <a href="{{ $loop->first ? route('career.details') : route('career.detail', $career) }}" class="fw-semibold">See this job</a>
                         </div>
                     </div>
                 @empty

@@ -14,13 +14,16 @@
             <div class="col-lg-8">
                 <h1 class="display-4">{{ $teamMember->name }}</h1>
                 <p class="text-color-primary fs-5">{{ $teamMember->title }}</p>
-                <p class="fw-light">{{ $teamMember->bio }}</p>
-                @if($teamMember->email)
-                    <p><strong>Email:</strong> <a href="mailto:{{ $teamMember->email }}">{{ $teamMember->email }}</a></p>
-                @endif
-                @if($teamMember->linkedin)
-                    <p><strong>LinkedIn:</strong> <a href="{{ $teamMember->linkedin }}" target="_blank">{{ $teamMember->linkedin }}</a></p>
-                @endif
+                <p class="fw-light">A strategist at heart and an innovator by trade, I co-founded [Consulting Firm Name] to cut through the noise and deliver what truly matters: results. My expertise lies in turning complex business challenges into clear opportunities for growth.</p>
+                <p class="fw-light">With a Ph.D. in Organizational Psychology and 15+ years of in-the-trenches experience, I blend academic rigor with practical, real-world solutions.</p>
+                <p><strong>Phone:</strong> <a href="tel:+919946685878">+91 9946685878</a></p>
+                <p><strong>Email:</strong> <a href="mailto:angiemontgomery@sample.com">angiemontgomery@sample.com</a></p>
+                <h5 class="mt-4">Specialties:</h5>
+                <ul>
+                    <li>Leadership &amp; Executive Strategy</li>
+                    <li>Organizational Transformation</li>
+                    <li>Growth Scaling</li>
+                </ul>
             </div>
         </div>
     </div>

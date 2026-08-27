@@ -26,6 +26,7 @@ Route::get('/testimonials', [PageController::class, 'testimonials'])->name('test
 Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/terms-of-service', [PageController::class, 'termsOfService'])->name('terms-of-service');
 Route::get('/careers', [PageController::class, 'careers'])->name('careers');
+Route::get('/career-details', [PageController::class, 'careerDetails'])->name('career.details');
 Route::get('/careers/{career:slug}', [PageController::class, 'careerDetail'])->name('career.detail');
 Route::get('/services/industries', [PageController::class, 'industries'])->name('industries');
 Route::get('/services/capabilities', [PageController::class, 'capabilities'])->name('capabilities');
