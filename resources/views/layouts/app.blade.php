@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Consultancy Company')</title>
-    <meta name="description" content="@yield('description', 'Consultancy Company delivers strategic advisory services for growth and transformation.')">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -30,10 +29,7 @@
                     <ul class="navbar-nav justify-content-end">
                         <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About Us</a></li>
                         <li class="nav-item dropdown">
-                            <div class="services-nav-trigger">
-                                <a class="nav-link text-start" href="{{ route('services') }}">Our Services</a>
-                                <button class="services-nav-toggle" type="button" aria-label="Toggle Our Services menu" aria-controls="servicesSubmenu" aria-expanded="false"><i class="bi bi-chevron-down"></i></button>
-                            </div>
+                            <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">Our Services</a>
                             <ul class="dropdown-menu services-submenu rounded-0 border-0 py-0" id="servicesSubmenu">
                                 <li><a class="dropdown-item nav-link fs-7" href="{{ route('industries') }}">Industries</a></li>
                                 <li><a class="dropdown-item nav-link fs-7" href="{{ route('capabilities') }}">Capabilities</a></li>

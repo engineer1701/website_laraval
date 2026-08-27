@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Consultancy Company | Strategic Advisory Services')
-@section('description', 'Consultancy Company helps organizations accelerate growth through strategy, operations, and transformation expertise.')
+@section('title', 'Consultancy Company')
 
 @section('content')
 <section class="hero-shell">
@@ -155,6 +154,7 @@
         <div class="section-heading d-flex justify-content-between align-items-end mb-4 gap-3">
             <div>
                 <h4 class="fw-bold text-color-primary mb-0">Our Insights</h4>
+                <p class="mb-0">Get expert insights on the trends shaping business strategy, leadership, and more.</p>
             </div>
             <a href="{{ route('news') }}" class="link-type1">Explore more</a>
         </div>
@@ -200,7 +200,7 @@
                             <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion1" aria-expanded="false" aria-controls="faq-accordion1">What industries do you specialize in, and how do you customize your approach?</button>
                         </h2>
                         <div id="faq-accordion1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">We specialize in a broad range of industries including HR, Strategic Planning, Product Development, Financial Planning, and Mergers &amp; Acquisitions. For each client, we perform an in-depth analysis of their specific needs, industry trends, and organizational structure. Based on this, we design tailored strategies and actionable plans that align with the client's goals, ensuring maximum impact and measurable results.</div>
+                            <div class="accordion-body">We specialize in a broad range of industries including HR, Strategic Planning, Product Development, Financial Planning, and Mergers &amp; Acquisitions. For each client, we perform an in-depth analysis of their specific needs, industry trends, and organizational structure. Based on this, we design tailored strategies and actionable plans that align with the client’s goals, ensuring maximum impact and measurable results.</div>
                         </div>
                     </div>
                     <div class="accordion-item border">

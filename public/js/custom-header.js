@@ -11,18 +11,9 @@ $(window).on("scroll", function () {
 //     });
 // });
 $("header li.nav-item.dropdown").click(function(e) {
+    e.preventDefault();
     e.stopPropagation(); // prevent click inside dropdown from triggering document click
     $(this).toggleClass("showhide").siblings().removeClass("showhide");
-});
-
-$(".services-nav-toggle").click(function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const $button = $(this);
-    const expanded = $button.attr("aria-expanded") === "true";
-    $button.closest(".nav-item").toggleClass("services-open", !expanded);
-    $button.attr("aria-expanded", !expanded);
-    $button.find("i").toggleClass("bi-chevron-down", expanded).toggleClass("bi-chevron-up", !expanded);
 });
 
 $(".service-item").click(function() {

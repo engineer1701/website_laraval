@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'FAQ | Consultancy Company')
-@section('description', 'Find answers to common questions about our advisory services and working approach.')
+@section('title', 'Consultancy Company')
 
 @section('content')
 <section>
@@ -34,7 +33,7 @@
                                 <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion1" aria-expanded="false" aria-controls="faq-accordion1">What industries do you specialize in, and how do you customize your approach?</button>
                             </h2>
                             <div id="faq-accordion1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">We specialize in a broad range of industries including HR, Strategic Planning, Product Development, Financial Planning, and Mergers &amp; Acquisitions. For each client, we perform an in-depth analysis of their specific needs, industry trends, and organizational structure. Based on this, we design tailored strategies and actionable plans that align with the client's goals, ensuring maximum impact and measurable results.</div>
+                                <div class="accordion-body">We specialize in a broad range of industries including HR, Strategic Planning, Product Development, Financial Planning, and Mergers &amp; Acquisitions. For each client, we perform an in-depth analysis of their specific needs, industry trends, and organizational structure. Based on this, we design tailored strategies and actionable plans that align with the client’s goals, ensuring maximum impact and measurable results.</div>
                             </div>
                         </div>
                         <div class="accordion-item border">

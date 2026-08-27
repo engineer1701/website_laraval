@@ -22,68 +22,16 @@
     <div class="container-lg">
         <div class="row g-2">
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="service-item rounded-4 overflow-hidden">
-                    <img src="https://html.reubro.com/consultancy-company/images/ai-img.jpg" class="h-100 w-100 object-fit-cover" alt="">
-                    <div class="srvc-cont p-3 h-100">
-                            <h5 class="mb-3">Artificial Intelligence</h5>
-                            <ul class="srvc-list fw-light">
-                                <li>Machine Learning</li>
-                                <li>Automation</li>
-                                <li>Data Analytics</li>
-                                <li>NLP</li>
-                                <li>AI Strategy</li>
-                                <li>Ethical AI</li>
-                            </ul>
-                    </div>
-                </div>
+                @include('components.service-card', ['image' => 'https://html.reubro.com/consultancy-company/images/ai-img.jpg', 'title' => 'Artificial Intelligence', 'items' => ['Machine Learning', 'Automation', 'Data Analytics', 'NLP', 'AI Strategy', 'Ethical AI']])
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="service-item rounded-4 overflow-hidden">
-                    <img src="https://html.reubro.com/consultancy-company/images/business-img.jpg" class="h-100 w-100 object-fit-cover" alt="">
-                    <div class="srvc-cont p-3 h-100">
-                            <h5 class="mb-3">Business and Organizational Purpose</h5>
-                            <ul class="srvc-list fw-light">
-                                <li>Vision &amp; Mission</li>
-                                <li>Sustainability</li>
-                                <li>Leadership</li>
-                                <li>Culture</li>
-                                <li>Stakeholders</li>
-                                <li>Impact</li>
-                            </ul>
-                    </div>
-                </div>
+                @include('components.service-card', ['image' => 'https://html.reubro.com/consultancy-company/images/business-img.jpg', 'title' => 'Business and Organizational Purpose', 'items' => ['Vision & Mission', 'Sustainability', 'Leadership', 'Culture', 'Stakeholders', 'Impact']])
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="service-item rounded-4 overflow-hidden">
-                    <img src="https://html.reubro.com/consultancy-company/images/Business-Resilience-img.jpg" class="h-100 w-100 object-fit-cover" alt="">
-                    <div class="srvc-cont p-3 h-100">
-                            <h5 class="mb-3">Business Resilience</h5>
-                            <ul class="srvc-list fw-light">
-                                <li>Crisis Planning</li>
-                                <li>Continuity</li>
-                                <li>Risk Management</li>
-                                <li>Agility</li>
-                                <li>Cybersecurity</li>
-                                <li>Financial Stability</li>
-                            </ul>
-                    </div>
-                </div>
+                @include('components.service-card', ['image' => 'https://html.reubro.com/consultancy-company/images/Business-Resilience-img.jpg', 'title' => 'Business Resilience', 'items' => ['Crisis Planning', 'Continuity', 'Risk Management', 'Agility', 'Cybersecurity', 'Financial Stability']])
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="service-item rounded-4 overflow-hidden">
-                    <img src="https://html.reubro.com/consultancy-company/images/Business-Transformation-img.jpg" class="h-100 w-100 object-fit-cover" alt="">
-                    <div class="srvc-cont p-3 h-100">
-                            <h5 class="mb-3">Business Transformation</h5>
-                            <ul class="srvc-list fw-light">
-                                <li>Digital Strategy</li>
-                                <li>Automation</li>
-                                <li>Customer Experience</li>
-                                <li>Data Insights</li>
-                                <li>Change Management</li>
-                                <li>Agile Models</li>
-                            </ul>
-                    </div>
-                </div>
+                @include('components.service-card', ['image' => 'https://html.reubro.com/consultancy-company/images/Business-Transformation-img.jpg', 'title' => 'Business Transformation', 'items' => ['Digital Strategy', 'Automation', 'Customer Experience', 'Data Insights', 'Change Management', 'Agile Models']])
             </div>
         </div>
     </div>

@@ -22,69 +22,16 @@
     <div class="container-lg">
         <div class="row g-2">
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="service-item rounded-4 overflow-hidden">
-                    <img src="{{ asset('images/inds1.png') }}" class="h-100 w-100 object-fit-cover" alt="">
-                    <div class="srvc-cont p-3 h-100">
-                            <h5 class="mb-3">Insurance Industry</h5>
-                            <ul class="srvc-list fw-light">
-                                <li>Life Insurance</li>
-                                <li>Property and Casualty Insurance</li>
-                                <li>Health Care Payers, Providers, Systems &amp; Services</li>
-                                <li>Reinsurance</li>
-                                <li>Bancassurance</li>
-                                <li>Insurtech</li>
-                                <li>Insurance Transformation</li>
-                            </ul>
-                    </div>
-                </div>
+                @include('components.service-card', ['image' => asset('images/inds1.png'), 'title' => 'Insurance Industry', 'items' => ['Life Insurance', 'Property and Casualty Insurance', 'Health Care Payers, Providers, Systems & Services', 'Reinsurance', 'Bancassurance', 'Insurtech', 'Insurance Transformation']])
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="service-item rounded-4 overflow-hidden">
-                    <img src="{{ asset('images/inds2.png') }}" class="h-100 w-100 object-fit-cover" alt="">
-                    <div class="srvc-cont p-3 h-100">
-                            <h5 class="mb-3">Aerospace and Defense</h5>
-                            <ul class="srvc-list fw-light">
-                                <li>Aviation</li>
-                                <li>Defense Systems</li>
-                                <li>Space</li>
-                                <li>Cybersecurity</li>
-                                <li>Supply Chain</li>
-                                <li>Sustainability</li>
-                            </ul>
-                    </div>
-                </div>
+                @include('components.service-card', ['image' => asset('images/inds2.png'), 'title' => 'Aerospace and Defense', 'items' => ['Aviation', 'Defense Systems', 'Space', 'Cybersecurity', 'Supply Chain', 'Sustainability']])
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="service-item rounded-4 overflow-hidden">
-                    <img src="{{ asset('images/inds3.png') }}" class="h-100 w-100 object-fit-cover" alt="">
-                    <div class="srvc-cont p-3 h-100">
-                            <h5 class="mb-3">Automotive Industry</h5>
-                            <ul class="srvc-list fw-light">
-                                <li>EVs</li>
-                                <li>Autonomous Driving</li>
-                                <li>Connected Mobility</li>
-                                <li>Manufacturing</li>
-                                <li>Aftermarket</li>
-                                <li>Green Mobility</li>
-                            </ul>
-                    </div>
-                </div>
+                @include('components.service-card', ['image' => asset('images/inds3.png'), 'title' => 'Automotive Industry', 'items' => ['EVs', 'Autonomous Driving', 'Connected Mobility', 'Manufacturing', 'Aftermarket', 'Green Mobility']])
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="service-item rounded-4 overflow-hidden">
-                    <img src="{{ asset('images/inds4.png') }}" class="h-100 w-100 object-fit-cover" alt="">
-                    <div class="srvc-cont p-3 h-100">
-                            <h5 class="mb-3">Consumer Products Industry</h5>
-                            <ul class="srvc-list fw-light">
-                                <li>Retail</li>
-                                <li>E-commerce</li>
-                                <li>Branding</li>
-                                <li>Supply Chain</li>
-                                <li>Sustainability</li>
-                                <li>Customer Insights</li>
-                            </ul>
-                    </div>
-                </div>
+                @include('components.service-card', ['image' => asset('images/inds4.png'), 'title' => 'Consumer Products Industry', 'items' => ['Retail', 'E-commerce', 'Branding', 'Supply Chain', 'Sustainability', 'Customer Insights']])
             </div>
         </div>
     </div>
