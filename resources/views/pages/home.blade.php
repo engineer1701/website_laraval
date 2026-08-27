@@ -103,6 +103,13 @@
         <div class="service-slider owl-carousel owl-theme">
             <div class="item">
                 <div class="service-card rounded-4 p-4 h-100">
+                    <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-Finance.svg') }}" class="img-fluid" alt="Finance"></div>
+                    <h4 class="text-color-primary">Finance</h4>
+                    <p class="mb-0">Drive financial performance through sophisticated modeling, capital structure optimization, and M&amp;A advisory. We help CFOs make data-driven decisions that improve margins, manage risk, and maximize shareholder value in dynamic market conditions.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="service-card rounded-4 p-4 h-100">
                     <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-StrategicPlanning.svg') }}" class="img-fluid" alt="Strategic Planning"></div>
                     <h4 class="text-color-primary">Strategic Planning</h4>
                     <p class="mb-0">Develop competitive strategies that position your organization for long-term success. From market entry and portfolio optimization to digital transformation roadmaps, we translate vision into executable plans with clear milestones and accountability frameworks.</p>
@@ -120,13 +127,6 @@
                     <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-HumanResources.svg') }}" class="img-fluid" alt="Human Resources"></div>
                     <h4 class="text-color-primary">Human Resources</h4>
                     <p class="mb-0">Transform your workforce into a competitive advantage. Our HR solutions span talent strategy, leadership development, change management, and culture transformation—creating organizations where top performers want to build their careers.</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="service-card rounded-4 p-4 h-100">
-                    <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset('images/icon-Finance.svg') }}" class="img-fluid" alt="Finance"></div>
-                    <h4 class="text-color-primary">Finance</h4>
-                    <p class="mb-0">Drive financial performance through sophisticated modeling, capital structure optimization, and M&A advisory. We help CFOs make data-driven decisions that improve margins, manage risk, and maximize shareholder value in dynamic market conditions.</p>
                 </div>
             </div>
         </div>
