@@ -29,7 +29,7 @@
                     <ul class="navbar-nav justify-content-end">
                         <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About Us</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">Our Services</a>
+                            <button class="nav-link dropdown-toggle" type="button" aria-expanded="false">Our Services</button>
                             <ul class="dropdown-menu services-submenu rounded-0 border-0 py-0" id="servicesSubmenu">
                                 <li><a class="dropdown-item nav-link fs-7" href="{{ route('industries') }}">Industries</a></li>
                                 <li><a class="dropdown-item nav-link fs-7" href="{{ route('capabilities') }}">Capabilities</a></li>
