@@ -10,7 +10,7 @@
 <body>
     <div class="container py-4">
         <h2>Create Case Study</h2>
-        <form method="POST" action="{{ route('admin.case-studies.store') }}">
+        <form method="POST" action="{{ route('admin.case-studies.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="mb-3"><label class="form-label">Title</label><input type="text" name="title" class="form-control" required></div>
             <div class="mb-3"><label class="form-label">Slug</label><input type="text" name="slug" class="form-control"></div>
@@ -19,7 +19,7 @@
             <div class="mb-3"><label class="form-label">Outcome</label><input type="text" name="result" class="form-control"></div>
             <div class="mb-3"><label class="form-label">Summary</label><textarea name="summary" class="form-control" rows="3" required></textarea></div>
             <div class="mb-3"><label class="form-label">Body</label><textarea name="body" class="form-control" rows="8" required></textarea></div>
-            <div class="mb-3"><label class="form-label">Image</label><input type="text" name="image" class="form-control"></div>
+            <div class="mb-3"><label class="form-label">Image</label><input type="file" name="image" accept="image/*" class="form-control"></div>
             <button class="btn btn-primary">Save</button>
         </form>
     </div>

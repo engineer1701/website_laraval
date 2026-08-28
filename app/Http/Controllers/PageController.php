@@ -104,14 +104,18 @@ class PageController extends Controller
 
     public function industries()
     {
-        $industries = Industry::latest()->get();
+        $industries = Industry::orderByRaw("CASE title WHEN 'Insurance Industry' THEN 1 WHEN 'Aerospace and Defense' THEN 2 WHEN 'Automotive Industry' THEN 3 WHEN 'Consumer Products Industry' THEN 4 ELSE 5 END")
+            ->orderBy('id')
+            ->get();
 
         return view('pages.industries', compact('industries'));
     }
 
     public function capabilities()
     {
-        $capabilities = Capability::latest()->get();
+        $capabilities = Capability::orderByRaw("CASE title WHEN 'Artificial Intelligence' THEN 1 WHEN 'Business and Organizational Purpose' THEN 2 WHEN 'Business Resilience' THEN 3 WHEN 'Business Transformation' THEN 4 ELSE 5 END")
+            ->orderBy('id')
+            ->get();
 
         return view('pages.capabilities', compact('capabilities'));
     }

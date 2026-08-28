@@ -71,7 +71,7 @@
             @forelse($teamMembers as $member)
                 <div class="item">
                     <div class="team-card rounded-4 position-relative">
-                        <img src="{{ asset($member->photo ?? 'images/team-img2.jpg') }}" class="h-100 object-fit-cover" alt="{{ $member->name }}">
+                        @if($member->photo)<img src="{{ $member->publicImageUrl($member->photo) }}" class="h-100 object-fit-cover" alt="{{ $member->name }}">@endif
                         <a href="{{ route('team.member', $member) }}" class="team-info-link p-xxl-4 p-xl-3 p-md-2 p-3">
                             <span><h5>{{ $member->name }}</h5><small>{{ $member->title }}</small></span>
                             <span class="link-icon"></span>
@@ -103,7 +103,7 @@
             @forelse($services as $service)
                 <div class="item">
                     <div class="service-card rounded-4 p-4 h-100">
-                        <div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ asset($service->icon ?: 'images/icon-Capabilities.svg') }}" class="img-fluid" alt="{{ $service->title }}"></div>
+                        @if($service->icon)<div class="srvc-icon rounded-3 secondary-bg mb-3"><img src="{{ $service->publicImageUrl($service->icon) }}" class="img-fluid" alt="{{ $service->title }}"></div>@endif
                         <h4 class="text-color-primary">{{ $service->title }}</h4>
                         <p class="mb-0">{{ $service->description }}</p>
                     </div>
@@ -146,7 +146,7 @@
                 <div class="item">
                     <div class="news-card rounded-5 p-3 pb-4 h-100">
                         <div class="news-featured-img rounded-4 mb-4">
-                            <img src="{{ asset($article->image ?? 'images/news-img1.jpg') }}" class="object-fit-cover h-100 w-100" alt="{{ $article->title }}">
+                            @if($article->image)<img src="{{ $article->publicImageUrl($article->image) }}" class="object-fit-cover h-100 w-100" alt="{{ $article->title }}">@endif
                         </div>
                         <small class="rounded-pill light-bg p-1 px-3">NEWS &amp; UPDATES</small>
                         <a href="{{ route('article', $article) }}" class="fs-5 fw-normal d-block my-4">{{ $article->title }}</a>

@@ -24,7 +24,7 @@
             @forelse($capabilities as $capability)
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     @include('components.service-card', [
-                        'image' => asset($capability->image ?: 'images/Value-Delivered.png'),
+                        'image' => $capability->publicImageUrl($capability->image),
                         'title' => $capability->title,
                         'description' => $capability->description,
                     ])

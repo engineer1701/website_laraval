@@ -25,8 +25,12 @@ class IndustryController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('uploads/industries', 'public');
+        }
 
         Industry::create($validated);
 
@@ -43,8 +47,15 @@ class IndustryController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $industry->deletePublicImage($industry->image);
+            $validated['image'] = $request->file('image')->store('uploads/industries', 'public');
+        } else {
+            unset($validated['image']);
+        }
 
         $industry->update($validated);
 
@@ -53,6 +64,7 @@ class IndustryController extends Controller
 
     public function destroy(Industry $industry)
     {
+        $industry->deletePublicImage($industry->image);
         $industry->delete();
 
         return redirect()->route('admin.industries.index')->with('success', 'Industry deleted successfully.');

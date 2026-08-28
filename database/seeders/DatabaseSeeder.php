@@ -157,18 +157,63 @@ class DatabaseSeeder extends Seeder
             'quote' => "Our experience with Consulting Company has been exceptional. From their responsive communication platform to their responsive communication. They provided valuable insights at both organizational and individual levels, with a robust assessment of our hazard exposure. The reports were clear, actionable, and highly data-driven—'easy, simple, and relevant,' taking less than five minutes to complete while downloading reports, graphs and tailored data on demand.",
         ]);
 
-        Testimonial::whereNotIn('name', ['Sarah Davies', 'Anisha Alluri'])->delete();
+        Testimonial::where('name', 'Sarah Davies')->where('company', 'Salesforce Consulting')->whereNull('logo')->update(['logo' => 'images/consulting-logo-sample.png']);
+        Testimonial::where('name', 'Anisha Alluri')->where('company', 'INC')->whereNull('logo')->update(['logo' => 'images/inc-logo.png']);
+
+        Service::whereIn('title', ['Strategy and Growth', 'Operations Excellence'])->delete();
 
         Service::firstOrCreate([
-            'title' => 'Strategy and Growth',
-            'description' => 'Helping clients define ambitious growth agendas, competitive positioning, and transformation roadmaps.',
-        ]);
-
-        Service::firstOrCreate([
-            'title' => 'Operations Excellence',
+            'title' => 'Finance',
         ], [
-            'description' => 'Improving operating performance through process redesign, supply chain, and execution capability.',
+            'description' => 'Drive financial performance through sophisticated modeling, capital structure optimization, and M&A advisory. We help CFOs make data-driven decisions that improve margins, manage risk, and maximize shareholder value in dynamic market conditions.',
+            'icon' => 'images/icon-Finance.svg',
         ]);
+
+        Service::firstOrCreate([
+            'title' => 'Strategic Planning',
+        ], [
+            'description' => 'Develop competitive strategies that position your organization for long-term success. From market entry and portfolio optimization to digital transformation roadmaps, we translate vision into executable plans with clear milestones and accountability frameworks.',
+            'icon' => 'images/icon-StrategicPlanning.svg',
+        ]);
+
+        Service::firstOrCreate([
+            'title' => 'Capabilities',
+        ], [
+            'description' => 'Elevate organizational performance through process redesign, technology enablement, and operational excellence programs. We identify efficiency gaps, implement lean methodologies, and build the agility needed to adapt in rapidly changing environments.',
+            'icon' => 'images/icon-Capabilities.svg',
+        ]);
+
+        Service::firstOrCreate([
+            'title' => 'Human Resources',
+        ], [
+            'description' => 'Transform your workforce into a competitive advantage. Our HR solutions span talent strategy, leadership development, change management, and culture transformation—creating organizations where top performers want to build their careers.',
+            'icon' => 'images/icon-HumanResources.svg',
+        ]);
+
+        $serviceDefaults = [
+            'Finance' => [
+                'description' => 'Drive financial performance through sophisticated modeling, capital structure optimization, and M&A advisory. We help CFOs make data-driven decisions that improve margins, manage risk, and maximize shareholder value in dynamic market conditions.',
+                'icon' => 'images/icon-Finance.svg',
+            ],
+            'Strategic Planning' => [
+                'description' => 'Develop competitive strategies that position your organization for long-term success. From market entry and portfolio optimization to digital transformation roadmaps, we translate vision into executable plans with clear milestones and accountability frameworks.',
+                'icon' => 'images/icon-StrategicPlanning.svg',
+            ],
+            'Capabilities' => [
+                'description' => 'Elevate organizational performance through process redesign, technology enablement, and operational excellence programs. We identify efficiency gaps, implement lean methodologies, and build the agility needed to adapt in rapidly changing environments.',
+                'icon' => 'images/icon-Capabilities.svg',
+            ],
+            'Human Resources' => [
+                'description' => 'Transform your workforce into a competitive advantage. Our HR solutions span talent strategy, leadership development, change management, and culture transformation—creating organizations where top performers want to build their careers.',
+                'icon' => 'images/icon-HumanResources.svg',
+            ],
+        ];
+
+        foreach ($serviceDefaults as $title => $defaults) {
+            Service::where('title', $title)
+                ->where('description', 'Test service description.')
+                ->update($defaults);
+        }
 
         Industry::firstOrCreate([
             'title' => 'Financial Services',
@@ -182,17 +227,88 @@ class DatabaseSeeder extends Seeder
             'description' => 'Advancing care delivery, digital health, and transformation in provider and payer organizations.',
         ]);
 
-        Capability::firstOrCreate([
-            'title' => 'Digital and Analytics',
+        Industry::where('title', 'Financial Services')
+            ->where('description', 'Supporting banks, insurers, and asset managers through complex regulatory and growth challenges.')
+            ->delete();
+        Industry::where('title', 'Healthcare')
+            ->where('description', 'Advancing care delivery, digital health, and transformation in provider and payer organizations.')
+            ->delete();
+
+        Capability::where('title', 'Digital and Analytics')
+            ->where('description', 'Unlocking data-driven decision making and digital experiences across the enterprise.')
+            ->delete();
+        Capability::where('title', 'People and Leadership')
+            ->where('description', 'Building high-performing organizational systems, leadership capability, and change readiness.')
+            ->delete();
+
+        Industry::firstOrCreate([
+            'title' => 'Insurance Industry',
         ], [
-            'description' => 'Unlocking data-driven decision making and digital experiences across the enterprise.',
+            'description' => "Life Insurance\nProperty and Casualty Insurance\nHealth Care Payers, Providers, Systems & Services\nReinsurance\nBancassurance\nInsurtech\nInsurance Transformation",
+            'image' => 'images/inds1.png',
+        ]);
+
+        Industry::firstOrCreate([
+            'title' => 'Aerospace and Defense',
+        ], [
+            'description' => "Aviation\nDefense Systems\nSpace\nCybersecurity\nSupply Chain\nSustainability",
+            'image' => 'images/inds2.png',
+        ]);
+
+        Industry::firstOrCreate([
+            'title' => 'Automotive Industry',
+        ], [
+            'description' => "EVs\nAutonomous Driving\nConnected Mobility\nManufacturing\nAftermarket\nGreen Mobility",
+            'image' => 'images/inds3.png',
+        ]);
+
+        Industry::firstOrCreate([
+            'title' => 'Consumer Products Industry',
+        ], [
+            'description' => "Retail\nE-commerce\nBranding\nSupply Chain\nSustainability\nCustomer Insights",
+            'image' => 'images/inds4.png',
         ]);
 
         Capability::firstOrCreate([
-            'title' => 'People and Leadership',
+            'title' => 'Artificial Intelligence',
         ], [
-            'description' => 'Building high-performing organizational systems, leadership capability, and change readiness.',
+            'description' => "Machine Learning\nAutomation\nData Analytics\nNLP\nAI Strategy\nEthical AI",
+            'image' => 'images/Value-Delivered.png',
         ]);
+
+        Capability::firstOrCreate([
+            'title' => 'Business and Organizational Purpose',
+        ], [
+            'description' => "Vision & Mission\nSustainability\nLeadership\nCulture\nStakeholders\nImpact",
+            'image' => 'images/Strategic-Perspective.png',
+        ]);
+
+        Capability::firstOrCreate([
+            'title' => 'Business Resilience',
+        ], [
+            'description' => "Crisis Planning\nContinuity\nRisk Management\nAgility\nCybersecurity\nFinancial Stability",
+            'image' => 'images/Expanding.png',
+        ]);
+
+        Capability::firstOrCreate([
+            'title' => 'Business Transformation',
+        ], [
+            'description' => "Digital Strategy\nAutomation\nCustomer Experience\nData Insights\nChange Management\nAgile Models",
+            'image' => 'images/Clients-Come-First.png',
+        ]);
+
+        Capability::where('title', 'Artificial Intelligence')
+            ->whereIn('image', [null, 'images/Value-Delivered.png'])
+            ->update(['image' => 'images/ai-img.jpg']);
+        Capability::where('title', 'Business and Organizational Purpose')
+            ->whereIn('image', [null, 'images/Strategic-Perspective.png'])
+            ->update(['image' => 'images/business-img.jpg']);
+        Capability::where('title', 'Business Resilience')
+            ->whereIn('image', [null, 'images/Expanding.png'])
+            ->update(['image' => 'images/Business-Resilience-img.jpg']);
+        Capability::where('title', 'Business Transformation')
+            ->whereIn('image', [null, 'images/Clients-Come-First.png'])
+            ->update(['image' => 'images/Business-Transformation-img.jpg']);
 
         Career::updateOrCreate([
             'slug' => 'trading-risk-endur-functional-consulting-manager',

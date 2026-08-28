@@ -10,13 +10,13 @@
 <body>
     <div class="container py-4">
         <h2>Create Article</h2>
-        <form method="POST" action="{{ route('admin.articles.store') }}">
+        <form method="POST" action="{{ route('admin.articles.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="mb-3"><label class="form-label">Title</label><input type="text" name="title" class="form-control" required></div>
             <div class="mb-3"><label class="form-label">Category</label><input type="text" name="category" class="form-control" required></div>
             <div class="mb-3"><label class="form-label">Excerpt</label><textarea name="excerpt" class="form-control"></textarea></div>
             <div class="mb-3"><label class="form-label">Body</label><textarea name="body" class="form-control" rows="8" required></textarea></div>
-            <div class="mb-3"><label class="form-label">Image</label><input type="text" name="image" class="form-control"></div>
+            <div class="mb-3"><label class="form-label">Image</label><input type="file" name="image" accept="image/*" class="form-control"></div>
             <div class="mb-3"><label class="form-label">Published At</label><input type="date" name="published_at" class="form-control"></div>
             <div class="form-check mb-3"><input class="form-check-input" type="checkbox" name="is_featured" value="1"><label class="form-check-label">Featured</label></div>
             <button class="btn btn-primary">Save</button>

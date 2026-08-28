@@ -28,13 +28,17 @@ class ArticleController extends Controller
             'category' => 'required|string|max:255',
             'excerpt' => 'nullable|string',
             'body' => 'required|string',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'published_at' => 'nullable|date',
             'is_featured' => 'nullable|boolean',
         ]);
 
         $validated['slug'] = Str::slug($validated['title']);
         $validated['is_featured'] = $request->boolean('is_featured');
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('uploads/articles', 'public');
+        }
 
         Article::create($validated);
 
@@ -53,13 +57,20 @@ class ArticleController extends Controller
             'category' => 'required|string|max:255',
             'excerpt' => 'nullable|string',
             'body' => 'required|string',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'published_at' => 'nullable|date',
             'is_featured' => 'nullable|boolean',
         ]);
 
         $validated['slug'] = Str::slug($validated['title']);
         $validated['is_featured'] = $request->boolean('is_featured');
+
+        if ($request->hasFile('image')) {
+            $article->deletePublicImage($article->image);
+            $validated['image'] = $request->file('image')->store('uploads/articles', 'public');
+        } else {
+            unset($validated['image']);
+        }
 
         $article->update($validated);
 
@@ -68,6 +79,7 @@ class ArticleController extends Controller
 
     public function destroy(Article $article)
     {
+        $article->deletePublicImage($article->image);
         $article->delete();
 
         return redirect()->route('admin.articles.index')->with('success', 'Article deleted successfully.');

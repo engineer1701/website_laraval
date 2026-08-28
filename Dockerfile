@@ -18,9 +18,10 @@ COPY . /var/www/html
 RUN rm -f .env bootstrap/cache/config.php \
     && composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist \
     && cp .env.example .env \
-    && mkdir -p database bootstrap/cache storage/framework/cache storage/framework/sessions storage/framework/views storage/logs \
+    && mkdir -p database bootstrap/cache storage/app/public storage/framework/cache storage/framework/sessions storage/framework/views storage/logs \
     && touch database/database.sqlite \
     && php artisan key:generate --ansi \
+    && php artisan storage:link \
     && chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
 

@@ -9,7 +9,7 @@
         <a href="{{ route('team') }}" class="d-inline-flex align-items-center mb-4"><i class="bi bi-arrow-left me-3"></i>back to our team</a>
         <div class="row g-4 align-items-start">
             <div class="col-lg-4">
-                <img src="{{ asset($teamMember->photo ?? 'images/team-img2.jpg') }}" class="w-100 rounded-5" alt="">
+                @if($teamMember->photo)<img src="{{ $teamMember->publicImageUrl($teamMember->photo) }}" class="w-100 rounded-5" alt="">@endif
             </div>
             <div class="col-lg-8">
                 <h1 class="display-4">{{ $teamMember->name }}</h1>

@@ -11,7 +11,7 @@
         <div class="fw-light">
             <h1 class="display-4">{{ $article->title }}</h1>
             <p class="fs-5">{{ $article->excerpt }}</p>
-            <img src="{{ asset($article->image ?? 'images/news-img1.jpg') }}" class="w-100 rounded-5 mb-5" alt="">
+            @if($article->image)<img src="{{ $article->publicImageUrl($article->image) }}" class="w-100 rounded-5 mb-5" alt="">@endif
             <p class="fw-semibold mb-3">{{ $article->excerpt }}</p>
             @php
                 $articleMeta = [

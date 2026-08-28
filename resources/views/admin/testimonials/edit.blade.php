@@ -10,11 +10,12 @@
 <body>
     <div class="container py-4">
         <h2>Edit Testimonial</h2>
-        <form method="POST" action="{{ route('admin.testimonials.update', $testimonial) }}">
+        <form method="POST" action="{{ route('admin.testimonials.update', $testimonial) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="mb-3"><label class="form-label">Name</label><input type="text" name="name" class="form-control" value="{{ $testimonial->name }}" required></div>
             <div class="mb-3"><label class="form-label">Company</label><input type="text" name="company" class="form-control" value="{{ $testimonial->company }}" required></div>
+            <div class="mb-3"><label class="form-label">Logo</label>@if($testimonial->logo)<img src="{{ $testimonial->publicImageUrl($testimonial->logo) }}" class="d-block mb-2" style="max-width:180px;max-height:120px;object-fit:contain" alt="Current logo">@endif<input type="file" name="logo" accept="image/*" class="form-control"><small class="text-muted">Choose a new logo to replace the current one.</small></div>
             <div class="mb-3"><label class="form-label">Quote</label><textarea name="quote" class="form-control" rows="5" required>{{ $testimonial->quote }}</textarea></div>
             <button class="btn btn-primary">Save</button>
         </form>

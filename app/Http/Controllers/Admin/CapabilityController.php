@@ -25,8 +25,12 @@ class CapabilityController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('uploads/capabilities', 'public');
+        }
 
         Capability::create($validated);
 
@@ -43,8 +47,15 @@ class CapabilityController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $capability->deletePublicImage($capability->image);
+            $validated['image'] = $request->file('image')->store('uploads/capabilities', 'public');
+        } else {
+            unset($validated['image']);
+        }
 
         $capability->update($validated);
 
@@ -53,6 +64,7 @@ class CapabilityController extends Controller
 
     public function destroy(Capability $capability)
     {
+        $capability->deletePublicImage($capability->image);
         $capability->delete();
 
         return redirect()->route('admin.capabilities.index')->with('success', 'Capability deleted successfully.');

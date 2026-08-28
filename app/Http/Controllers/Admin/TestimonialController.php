@@ -26,7 +26,12 @@ class TestimonialController extends Controller
             'name' => 'required|string|max:255',
             'company' => 'required|string|max:255',
             'quote' => 'required|string',
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('logo')) {
+            $validated['logo'] = $request->file('logo')->store('uploads/testimonials', 'public');
+        }
 
         Testimonial::create($validated);
 
@@ -44,7 +49,15 @@ class TestimonialController extends Controller
             'name' => 'required|string|max:255',
             'company' => 'required|string|max:255',
             'quote' => 'required|string',
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('logo')) {
+            $testimonial->deletePublicImage($testimonial->logo);
+            $validated['logo'] = $request->file('logo')->store('uploads/testimonials', 'public');
+        } else {
+            unset($validated['logo']);
+        }
 
         $testimonial->update($validated);
 
@@ -53,6 +66,7 @@ class TestimonialController extends Controller
 
     public function destroy(Testimonial $testimonial)
     {
+        $testimonial->deletePublicImage($testimonial->logo);
         $testimonial->delete();
 
         return redirect()->route('admin.testimonials.index')->with('success', 'Testimonial deleted successfully.');

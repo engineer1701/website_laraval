@@ -24,7 +24,7 @@
             @foreach($articles as $article)
                 <div class="col-lg-4 col-sm-6">
                     <div class="news-card rounded-5 p-3 pb-4">
-                        <div class="news-featured-img rounded-4 mb-4"><img src="{{ asset($article->image ?? 'images/news-img1.jpg') }}" class="object-fit-cover h-100 w-100" alt=""></div>
+                        @if($article->image)<div class="news-featured-img rounded-4 mb-4"><img src="{{ $article->publicImageUrl($article->image) }}" class="object-fit-cover h-100 w-100" alt=""></div>@endif
                         <small class="rounded-pill light-bg p-1 px-3">{{ strtoupper($article->category) }}</small>
                         <a href="{{ route('article', $article) }}" class="fs-5 fw-normal d-block my-4">{{ $article->title }}</a>
                         <small>Report</small>

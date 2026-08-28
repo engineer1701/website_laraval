@@ -24,7 +24,7 @@
             @forelse($industries as $industry)
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     @include('components.service-card', [
-                        'image' => asset($industry->image ?: 'images/inds1.png'),
+                        'image' => $industry->publicImageUrl($industry->image),
                         'title' => $industry->title,
                         'description' => $industry->description,
                     ])

@@ -10,10 +10,11 @@
 <body>
     <div class="container py-4">
         <h2>Create Testimonial</h2>
-        <form method="POST" action="{{ route('admin.testimonials.store') }}">
+        <form method="POST" action="{{ route('admin.testimonials.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="mb-3"><label class="form-label">Name</label><input type="text" name="name" class="form-control" required></div>
             <div class="mb-3"><label class="form-label">Company</label><input type="text" name="company" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Logo</label><input type="file" name="logo" accept="image/*" class="form-control"></div>
             <div class="mb-3"><label class="form-label">Quote</label><textarea name="quote" class="form-control" rows="5" required></textarea></div>
             <button class="btn btn-primary">Save</button>
         </form>

@@ -21,22 +21,18 @@
     <div class="container-lg">
         <h2 class="fw-light display-5 mb-5">Validated by <br> happy customers.</h2>
         <div class="row g-3">
-            <div class="col-md-6">
-                <div class="border border-secondary rounded-4 p-lg-4 p-3 h-100">
-                    <img src="https://html.reubro.com/consultancy-company/images/consulting-logo-sample.png" class="test-logo img-fluid mb-4" alt="">
-                    <p class="fw-light">We're incredibly grateful for the transformative impact that Consulting Company has had on our organization. Thanks to the Consulting Company team, we've seen an improvement in our workplace culture, with a heightened awareness of mental health and a collective commitment to fostering a safe and respectful environment for all. We recommend Consulting Company to any organization looking to prioritize employee well-being and create a supportive, safe &amp; respectful workplace culture.</p>
-                    <strong>Sarah Davies</strong>
-                    <div class="fw-light">Head of Learning &amp; Development</div>
+            @forelse($testimonials as $testimonial)
+                <div class="col-md-6">
+                    <div class="border border-secondary rounded-4 p-lg-4 p-3 h-100">
+                        @if($testimonial->logo)<img src="{{ $testimonial->publicImageUrl($testimonial->logo) }}" class="test-logo img-fluid mb-4" alt="">@endif
+                        <p class="fw-light">{{ $testimonial->quote }}</p>
+                        <strong>{{ $testimonial->name }}</strong>
+                        <div class="fw-light">{{ $testimonial->company }}</div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="border border-secondary rounded-4 p-lg-4 p-3 h-100">
-                    <img src="https://html.reubro.com/consultancy-company/images/inc-logo.png" class="test-logo img-fluid mb-4" alt="">
-                    <p class="fw-light">Our experience with Consulting Company has been exceptional. From their responsive communication platform to their responsive communication. They provided valuable insights at both organizational and individual levels, with a robust assessment of our hazard exposure. The reports were clear, actionable, and highly data-driven—'easy, simple, and relevant,' taking less than five minutes to complete while downloading reports, graphs and tailored data on demand.</p>
-                    <strong>Anisha Alluri</strong>
-                    <div class="fw-light">Manager INC</div>
-                </div>
-            </div>
+            @empty
+                <p class="mb-0">Testimonials will be available soon.</p>
+            @endforelse
         </div>
     </div>
 </section>

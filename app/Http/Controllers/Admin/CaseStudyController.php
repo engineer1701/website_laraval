@@ -31,11 +31,15 @@ class CaseStudyController extends Controller
             'result' => 'nullable|string|max:255',
             'summary' => 'required|string',
             'body' => 'required|string',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
         if (empty($validated['slug'])) {
             $validated['slug'] = Str::slug($validated['title']);
+        }
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('uploads/case-studies', 'public');
         }
 
         CaseStudy::create($validated);
@@ -58,8 +62,15 @@ class CaseStudyController extends Controller
             'result' => 'nullable|string|max:255',
             'summary' => 'required|string',
             'body' => 'required|string',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $caseStudy->deletePublicImage($caseStudy->image);
+            $validated['image'] = $request->file('image')->store('uploads/case-studies', 'public');
+        } else {
+            unset($validated['image']);
+        }
 
         $caseStudy->update($validated);
 
@@ -68,6 +79,7 @@ class CaseStudyController extends Controller
 
     public function destroy(CaseStudy $caseStudy)
     {
+        $caseStudy->deletePublicImage($caseStudy->image);
         $caseStudy->delete();
 
         return redirect()->route('admin.case-studies.index')->with('success', 'Case study deleted successfully.');

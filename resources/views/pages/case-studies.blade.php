@@ -24,7 +24,7 @@
             @foreach($caseStudies as $study)
                 <div class="col-lg-4 col-md-6">
                     <div class="news-card rounded-5 p-3 pb-4">
-                        <div class="news-featured-img rounded-4 mb-4"><img src="{{ asset($study->image ?? 'images/news-img1.jpg') }}" class="object-fit-cover h-100 w-100" alt=""></div>
+                        @if($study->image)<div class="news-featured-img rounded-4 mb-4"><img src="{{ $study->publicImageUrl($study->image) }}" class="object-fit-cover h-100 w-100" alt=""></div>@endif
                         <small class="rounded-pill light-bg p-1 px-3">{{ strtoupper($study->industry) }}</small>
                         <a href="{{ route('case-study', $study) }}" class="fs-5 fw-normal d-block my-4">{{ $study->title }}</a>
                         <small>{{ $study->result }}</small>
