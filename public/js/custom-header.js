@@ -5,15 +5,10 @@ $(window).on("scroll", function () {
         $("header").removeClass("scrolled");
     }
 });
-// $(document).ready(function () {
-//     $("header li.nav-item.dropdown").click(function(){
-//         $(this).toggleClass("showhide").siblings().removeClass("showhide");
-//     });
-// });
-$("header li.nav-item.dropdown").click(function(e) {
+$('header li.nav-item.dropdown > .dropdown-toggle').click(function(e) {
     e.preventDefault();
-    e.stopPropagation(); // prevent click inside dropdown from triggering document click
-    $(this).toggleClass("showhide").siblings().removeClass("showhide");
+    e.stopPropagation();
+    $(this).parent().toggleClass("showhide").siblings().removeClass("showhide");
 });
 
 $(".service-item").click(function() {

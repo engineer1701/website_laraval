@@ -30,9 +30,6 @@ Route::get('/career-details', [PageController::class, 'careerDetails'])->name('c
 Route::get('/careers/{career:slug}', [PageController::class, 'careerDetail'])->name('career.detail');
 Route::get('/industries', [PageController::class, 'industries'])->name('industries');
 Route::get('/capabilities', [PageController::class, 'capabilities'])->name('capabilities');
-Route::get('/services/industries', [PageController::class, 'industries'])->name('industries.legacy');
-Route::get('/services/capabilities', [PageController::class, 'capabilities'])->name('capabilities.legacy');
-Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/insights', [PageController::class, 'news'])->name('news');
 Route::get('/news', [PageController::class, 'news'])->name('news.page');
 Route::get('/insights/{article:slug}', [PageController::class, 'article'])->name('article');

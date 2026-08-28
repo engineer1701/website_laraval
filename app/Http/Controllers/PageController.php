@@ -116,13 +116,6 @@ class PageController extends Controller
         return view('pages.capabilities', compact('capabilities'));
     }
 
-    public function services()
-    {
-        $services = $this->orderedServices();
-
-        return view('pages.services', compact('services'));
-    }
-
     public function team()
     {
         $teamMembers = TeamMember::latest()->get();
