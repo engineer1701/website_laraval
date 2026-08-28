@@ -21,18 +21,17 @@
 <section class="py-5">
     <div class="container-lg">
         <div class="row g-2">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                @include('components.service-card', ['image' => asset('images/inds1.png'), 'title' => 'Insurance Industry', 'items' => ['Life Insurance', 'Property and Casualty Insurance', 'Health Care Payers, Providers, Systems & Services', 'Reinsurance', 'Bancassurance', 'Insurtech', 'Insurance Transformation']])
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                @include('components.service-card', ['image' => asset('images/inds2.png'), 'title' => 'Aerospace and Defense', 'items' => ['Aviation', 'Defense Systems', 'Space', 'Cybersecurity', 'Supply Chain', 'Sustainability']])
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                @include('components.service-card', ['image' => asset('images/inds3.png'), 'title' => 'Automotive Industry', 'items' => ['EVs', 'Autonomous Driving', 'Connected Mobility', 'Manufacturing', 'Aftermarket', 'Green Mobility']])
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                @include('components.service-card', ['image' => asset('images/inds4.png'), 'title' => 'Consumer Products Industry', 'items' => ['Retail', 'E-commerce', 'Branding', 'Supply Chain', 'Sustainability', 'Customer Insights']])
-            </div>
+            @forelse($industries as $industry)
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    @include('components.service-card', [
+                        'image' => asset($industry->image ?: 'images/inds1.png'),
+                        'title' => $industry->title,
+                        'description' => $industry->description,
+                    ])
+                </div>
+            @empty
+                <p class="mb-0">Industry information will be available soon.</p>
+            @endforelse
         </div>
     </div>
 </section>

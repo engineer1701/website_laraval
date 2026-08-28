@@ -21,18 +21,17 @@
 <section class="py-5">
     <div class="container-lg">
         <div class="row g-2">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                @include('components.service-card', ['image' => 'https://html.reubro.com/consultancy-company/images/ai-img.jpg', 'title' => 'Artificial Intelligence', 'items' => ['Machine Learning', 'Automation', 'Data Analytics', 'NLP', 'AI Strategy', 'Ethical AI']])
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                @include('components.service-card', ['image' => 'https://html.reubro.com/consultancy-company/images/business-img.jpg', 'title' => 'Business and Organizational Purpose', 'items' => ['Vision & Mission', 'Sustainability', 'Leadership', 'Culture', 'Stakeholders', 'Impact']])
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                @include('components.service-card', ['image' => 'https://html.reubro.com/consultancy-company/images/Business-Resilience-img.jpg', 'title' => 'Business Resilience', 'items' => ['Crisis Planning', 'Continuity', 'Risk Management', 'Agility', 'Cybersecurity', 'Financial Stability']])
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                @include('components.service-card', ['image' => 'https://html.reubro.com/consultancy-company/images/Business-Transformation-img.jpg', 'title' => 'Business Transformation', 'items' => ['Digital Strategy', 'Automation', 'Customer Experience', 'Data Insights', 'Change Management', 'Agile Models']])
-            </div>
+            @forelse($capabilities as $capability)
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    @include('components.service-card', [
+                        'image' => asset($capability->image ?: 'images/Value-Delivered.png'),
+                        'title' => $capability->title,
+                        'description' => $capability->description,
+                    ])
+                </div>
+            @empty
+                <p class="mb-0">Capability information will be available soon.</p>
+            @endforelse
         </div>
     </div>
 </section>

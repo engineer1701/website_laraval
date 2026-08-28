@@ -53,7 +53,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('case-studies', CaseStudyController::class)->except(['show']);
         Route::resource('careers', CareerController::class)->except(['show']);
         Route::resource('team-members', TeamMemberController::class)->except(['show']);
-        Route::get('/contacts', [AdminContactController::class, 'index'])->name('contacts.index');
+        Route::resource('contacts', AdminContactController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
     });
 });
 
