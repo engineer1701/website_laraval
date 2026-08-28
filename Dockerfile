@@ -25,4 +25,4 @@ RUN rm -f .env bootstrap/cache/config.php \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
 
 EXPOSE 10000
-CMD ["sh", "-lc", "if [ -z \"${APP_URL:-}\" ] && [ -n \"${RENDER_EXTERNAL_URL:-}\" ]; then export APP_URL=\"$RENDER_EXTERNAL_URL\"; fi && php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder --force && php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan config:cache && php artisan route:cache && exec php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
+CMD ["sh", "-lc", "if [ -z \"${APP_URL:-}\" ] && [ -n \"${RENDER_EXTERNAL_URL:-}\" ]; then export APP_URL=\"$RENDER_EXTERNAL_URL\"; fi && php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder --force && php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan config:cache && php artisan route:cache && exec php artisan serve --no-reload --host=0.0.0.0 --port=${PORT:-10000}"]
